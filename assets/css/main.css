@@ -621,8 +621,8 @@ input, select, textarea {
 /* Box */
 
 	.box {
-		background: #ffffff;
-		color: #39454b;
+		background: transparent;
+		color: #ffffff;
 		padding: 2em;
 	}
 
@@ -631,7 +631,7 @@ input, select, textarea {
 		}
 
 		.box.style2 {
-			padding: 3.5em 2.5em 3.5em 2.5em;
+			padding: 3.5em 9.5em;
 		}
 
 		@media screen and (max-width: 736px) {
@@ -641,8 +641,8 @@ input, select, textarea {
 			}
 
 				.box.style2 {
-					padding: 1.5em 1.25em 1.5em 1.25em;
-					background-color: rgba(255, 255, 255, 0.9);
+					padding: 1.5em 1.25em;
+					/*background-color: rgba(0, 255, 255, 0.9);*/
 				}
 
 		}
@@ -662,9 +662,10 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #98c593;
-		border: 0;
-		border-radius: 3.5em;
+		background-color: transparent;
+		border: 2;
+		border-color:white;
+		border-radius: 0.5em;
 		color: #ffffff;
 		cursor: pointer;
 		display: inline-block;
@@ -719,7 +720,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		.button:hover,
 		button:hover {
-			background-color: #a8cea4;
+		    color: #000000;
+			background-color: #ffffff;
 		}
 
 		input[type="button"]:active,
@@ -727,7 +729,8 @@ input, select, textarea {
 		input[type="reset"]:active,
 		.button:active,
 		button:active {
-			background-color: #88bc82;
+			background-color: #ffffff;
+			color: #000000;
 		}
 
 		input[type="button"].style2,
@@ -745,7 +748,7 @@ input, select, textarea {
 			input[type="reset"].style2:hover,
 			.button.style2:hover,
 			button.style2:hover {
-				background-color: rgba(229, 230, 231, 0.25);
+				background-color: rgba(231, 231, 231, 0.25);
 			}
 
 			input[type="button"].style2:active,
@@ -753,7 +756,7 @@ input, select, textarea {
 			input[type="reset"].style2:active,
 			.button.style2:active,
 			button.style2:active {
-				background-color: rgba(229, 230, 231, 0.375);
+				background-color: rgba(231, 231, 23, 0.375);
 			}
 
 			input[type="button"].style2.down,
@@ -1234,7 +1237,7 @@ input, select, textarea {
 		-webkit-box-sizing: content-box;
 		-ms-box-sizing: content-box;
 		box-sizing: content-box;
-		background: #fff;
+		background: #000000;
 		padding-bottom: 3em;
 		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 	}
@@ -1278,7 +1281,7 @@ input, select, textarea {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			background: #ffffff;
+			background: #000000;
 			width: 100%;
 			height: 3em;
 			line-height: 2.8em;
@@ -1952,14 +1955,18 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			text-align: center;
-			padding: 3em 0 3em 0;
+			text-align: left;
+			padding: 3em 0 15em 0;
 		}
 
 			.main.style1 h2 {
 				font-size: 4.25em;
 				line-height: 1em;
 			}
+			.main.style1 h3 {
+            				font-size: 1.25em;
+            				line-height: 1em;
+            			}
 
 			.main.style1 > .content {
 				-moz-transition: opacity 1s ease;
@@ -2018,7 +2025,7 @@ input, select, textarea {
 				-ms-justify-content: -ms-flex-end;
 				justify-content: flex-end;
 			}
-
+            /*
 			.main.style2.inactive.left > .content {
 				-moz-transform: translateX(-100%);
 				-webkit-transform: translateX(-100%);
@@ -2031,7 +2038,7 @@ input, select, textarea {
 				-webkit-transform: translateX(100%);
 				-ms-transform: translateX(100%);
 				transform: translateX(100%);
-			}
+			}*/
 
 		.main.style3 {
 			text-align: center;
@@ -2043,11 +2050,11 @@ input, select, textarea {
 			}
 
 			.main.style3.primary {
-				background: #ffffff;
+				background: #000000;
 			}
 
 			.main.style3.secondary {
-				background: #f5f6f7;
+				background: #000000;
 			}
 
 		.main.dark {
@@ -2057,6 +2064,10 @@ input, select, textarea {
 			.main.dark a {
 				color: inherit;
 			}
+
+			/* .main.dark header {
+                     text-shadow: 2px 2px 0px #ffffff; FF3.5+, Opera 9+, Saf1+, Chrome, IE10
+            } */
 
 			.main.dark .button.style2 {
 				border-color: #ffffff;
@@ -2119,6 +2130,9 @@ input, select, textarea {
 				.main.style1 h2 {
 					font-size: 3em;
 				}
+				.main.style1 h4 {
+                					font-size: 2em;
+                				}
 
 			.main.style2 {
 				padding: 6em 15px 6em 15px;
@@ -2244,9 +2258,9 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("../../images/intro.jpg");
+		background: url("../../images/home/home_1.3.jpg");
 		background-size: cover;
-		background-attachment: fixed;
+		/*background-attachment: fixed; */
 		background-position: bottom center;
 		background-repeat: no-repeat;
 	}
@@ -2254,20 +2268,35 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("../../images/one.jpg");
+		background: url("../../images/home/home_2.1.jpg");
 		background-size: cover;
-		background-attachment: fixed;
 		background-position: center center;
 	}
 
 /* Two */
 
 	#two {
-		background: url("../../images/two.jpg");
+		background: url("../../images/home/home_3.2.jpg");
 		background-size: cover;
-		background-attachment: fixed;
 		background-position: center center;
 	}
+/* Three */
+
+	#three {
+		background: url("../../images/home/home_4.1.jpeg");
+		background-size: cover;
+		background-position: center center;
+	}
+
+/* Four */
+
+	#four {
+		background: url("../../images/home/home_5.2.jpg");
+		background-size: cover;
+		background-position: center center;
+	}
+
+
 
 /* Work */
 
