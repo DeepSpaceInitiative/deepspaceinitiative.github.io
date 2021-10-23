@@ -2258,7 +2258,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("../../images/home/home_1.3.jpg");
+		background: url("../../images/home/home_13.jpg");
 		background-size: cover;
 		/*background-attachment: fixed; */
 		background-position: bottom center;
@@ -2268,7 +2268,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("../../images/home/home_2.1.jpg");
+		background: url("../../images/home/home_21.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
@@ -2276,14 +2276,14 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("../../images/home/home_3.2.jpg");
+		background: url("../../images/home/home_32.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
 /* Three */
 
 	#three {
-		background: url("../../images/home/home_4.1.jpeg");
+		background: url("../../images/home/home_41.jpeg");
 		background-size: cover;
 		background-position: center center;
 	}
@@ -2291,7 +2291,7 @@ input, select, textarea {
 /* Four */
 
 	#four {
-		background: url("../../images/home/home_5.2.jpg");
+		background: url("../../images/home/home_52.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
