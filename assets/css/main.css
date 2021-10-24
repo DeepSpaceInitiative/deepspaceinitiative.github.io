@@ -2338,7 +2338,7 @@ input, select, textarea {
     letter-spacing: -0.05em;
 }
 
-.card-img {
+.cardimg {
         width: 100%;
         height: 300px;
         border: 1px solid black;
