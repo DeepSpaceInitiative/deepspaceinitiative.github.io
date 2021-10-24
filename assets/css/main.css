@@ -1237,7 +1237,7 @@ input, select, textarea {
 		-webkit-box-sizing: content-box;
 		-ms-box-sizing: content-box;
 		box-sizing: content-box;
-		background: #000000;
+		background: #ffffff;
 		padding-bottom: 3em;
 		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 	}
@@ -1281,7 +1281,7 @@ input, select, textarea {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			background: #000000;
+			background: #fff;
 			width: 100%;
 			height: 3em;
 			line-height: 2.8em;
@@ -1433,6 +1433,7 @@ input, select, textarea {
 		width: 45em;
 		max-width: 100%;
 		margin: 0 auto 2em auto;
+		font-color: white;
 	}
 
 		.gallery article {
@@ -2387,6 +2388,6 @@ input, select, textarea {
 }
 
 .title {
-  color: grey;
+  color: white;
 }
 
