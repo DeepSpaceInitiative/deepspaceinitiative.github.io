@@ -2277,7 +2277,7 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("../../images/home_images/home32.jpg");
+		background: url("../../images/home_images/home31.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
@@ -2317,8 +2317,11 @@ input, select, textarea {
         background: black;
         background-size: cover;
         background-attachment: fixed;
-		text-align:left;
 	}
+
+	.left-align {
+                text-align:left;
+            }
 
     #crew {
         padding: 0em 10em;
