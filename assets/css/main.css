@@ -2317,6 +2317,7 @@ input, select, textarea {
         background: black;
         background-size: cover;
         background-attachment: fixed;
+		text-align:left;
 	}
 
     #crew {
