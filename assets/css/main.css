@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("https://fonts.googleapis.com/css?family=Play");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -497,12 +497,14 @@ input, select, textarea {
 
 	}
 
-/* Type */
+/* Type
+font-family: "Source Sans Pro", "sans-serif";
+*/
 
 	body, input, textarea, select {
-		font-family: "Source Sans Pro", "sans-serif";
-		font-weight: 300;
-		font-size: 18pt;
+		font-family: "Play";
+		font-weight: 100;
+		font-size: 12pt;
 		line-height: 1.75em;
 		color: #39454b;
 		letter-spacing: 0.025em;
@@ -548,9 +550,13 @@ input, select, textarea {
 			}
 
 		}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-weight: 900;
+    h1 {
+    		font-weight: 700;
+    		color: inherit;
+    		letter-spacing: -0.0325em;
+    	}
+	h2, h3, h4, h5, h6 {
+		font-weight: 200;
 		color: inherit;
 		letter-spacing: -0.0325em;
 	}
@@ -575,7 +581,7 @@ input, select, textarea {
 	}
 
 	strong, b {
-		font-weight: 900;
+		font-weight: 500;
 		color: inherit;
 	}
 
@@ -1843,7 +1849,7 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			position: absolute;
+			position: fixed;
 			left: 1em;
 			top: 0;
 			height: 3em;
@@ -2259,7 +2265,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		background: url("../../images/home_images/home13.jpg");
+		background: url("../../images/home_images/main.jpg");
 		background-size: cover;
 		/*background-attachment: fixed; */
 		background-position: bottom center;
@@ -2269,7 +2275,7 @@ input, select, textarea {
 /* One */
 
 	#one {
-		background: url("../../images/home_images/home21.jpg");
+		background: url("../../images/home_images/AHP1.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
@@ -2277,25 +2283,23 @@ input, select, textarea {
 /* Two */
 
 	#two {
-		background: url("../../images/home_images/home31.jpg");
+		background: url("../../images/home_images/home21.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
 /* Three */
 
 	#three {
-		background: url("../../images/home_images/home41.jpeg");
+		background: url("../../images/home_images/STS.jpg");
 		background-size: cover;
 		background-position: center center;
 	}
 
-/* Four */
-
-	#four {
-		background: url("../../images/home_images/home52.jpg");
-		background-size: cover;
-		background-position: center center;
-	}
+    #four {
+        background: url("../../images/home_images/Home-Last.jpg");
+        background-size: cover;
+        background-position: center center;
+    }
 
 
 
