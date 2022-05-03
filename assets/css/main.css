@@ -2305,7 +2305,7 @@ font-family: "Source Sans Pro", "sans-serif";
 
 /* Work */
 
-	#work {
+	#news, #research, #about_us {
 		overflow: hidden;
 		padding-bottom: 0;
         background: black;
@@ -2317,7 +2317,8 @@ font-family: "Source Sans Pro", "sans-serif";
 
 	#careers {
 		overflow: hidden;
-		padding-bottom: 0;
+		padding: 50px;
+		color: white;
         background: black;
         background-size: cover;
         background-attachment: fixed;
@@ -2337,6 +2338,13 @@ font-family: "Source Sans Pro", "sans-serif";
 .column {
   float: left;
   width: 25%;
+  margin-bottom: 16px;
+  padding: 1em 5px;
+}
+
+.column_3 {
+  float: left;
+  width: 33%;
   margin-bottom: 16px;
   padding: 1em 5px;
 }
@@ -2373,14 +2381,21 @@ font-family: "Source Sans Pro", "sans-serif";
     width: 100%;
     display: block;
   }
+  .column_3 {
+      width: 100%;
+      display: block;
+    }
   #crew {
     padding: 0em, 2em;
   }
+
 }
 
-/* Add some shadows to create a card effect */
+/* Add some shadows to create a card effect ... background: #161414; for background*/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 0.8em;
 }
 
 /* Some left and right padding inside the container */
@@ -2399,3 +2414,39 @@ font-family: "Source Sans Pro", "sans-serif";
   color: white;
 }
 
+
+.leftcolumn {
+  float: left;
+  width: 50%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 50%;
+  padding-left: 20px;
+  background-size: contain
+}
+
+/* Fake image */
+.fakeimg {
+  width: 100%;
+  padding: 20px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
