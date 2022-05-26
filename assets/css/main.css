@@ -2268,7 +2268,7 @@ font-family: "Source Sans Pro", "sans-serif";
 		background: url("../../images/home_images/main.jpg");
 		background-size: cover;
 		/*background-attachment: fixed; */
-		background-position: bottom center;
+		background-position: center center;
 		background-repeat: no-repeat;
 	}
 
@@ -2370,7 +2370,10 @@ font-family: "Source Sans Pro", "sans-serif";
     width: 50%;
     display: block;
   }
-
+  .column_3 {
+      width: 50%;
+      display: block;
+    }
   #crew {
       padding: 0em 5em;
     }
@@ -2395,7 +2398,7 @@ font-family: "Source Sans Pro", "sans-serif";
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.65em;
 }
 
 /* Some left and right padding inside the container */
