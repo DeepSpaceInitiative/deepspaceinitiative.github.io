@@ -9,7 +9,7 @@ export default function Navbar() {
     <Head>
     <header id="header" className="main dark">
       <h1>
-        <Link href='/index'><a>DEEP SPACE INITIATIVE</a></Link>
+        <Link href='/'><a>DEEP SPACE INITIATIVE</a></Link>
       </h1>
       <nav>
         <ul>

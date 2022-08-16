@@ -12,8 +12,8 @@ export default function Home() {
         Increasing accessibility and opportunity for space research all over the
         world
       </p>
-      <Link href="about_us">
-        <button>LEARN MORE</button>
+      <Link href="/about_us">
+        <a><button>LEARN MORE</button></a>
       </Link>
     </div>
   </section>
@@ -23,8 +23,8 @@ export default function Home() {
       <header>
         <h2>ASTRONAUT HEALTH &amp; PERFORMANCE</h2>
       </header>
-      <Link href="research">
-        <button>EXPLORE</button>
+      <Link href="/research">
+        <a><button>EXPLORE</button></a>
       </Link>
     </div>
   </section>
@@ -36,9 +36,11 @@ export default function Home() {
           SPACE <br /> ARCHITECTURE
         </h2>
       </header>
-      <a href="research.html">
-        <button>EXPLORE</button>
-      </a>
+      <Link href="/research">
+        <a>
+          <button>EXPLORE</button>
+        </a>
+      </Link>
     </div>
   </section>
   {/* Three */}
@@ -47,9 +49,11 @@ export default function Home() {
       <header>
         <h2>SPACE TRANSPORTATION SYSTEMS</h2>
       </header>
-      <a href="research.html">
-        <button>EXPLORE</button>
-      </a>
+      <Link href="/research">
+        <a>
+          <button>EXPLORE</button>
+        </a>
+      </Link>
     </div>
   </section>
   {/*			<section id="four" class="main style2 fullscreen">*/}
