@@ -1,0 +1,10 @@
+import '../public/assets/css/main.css'
+import Layout from '../components/layout'
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
+}
