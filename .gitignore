@@ -1,0 +1,30 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/nextjs-dsi/node_modules
+/nextjs-dsi/.pnp
+/nextjs-dsi/.pnp.js
+
+# testing
+/nextjs-dsi/coverage
+
+# next.js
+/nextjs-dsi/.next/
+/nextjs-dsi/out/
+
+# production
+/nextjs-dsi/build
+
+# misc
+.DS_Store
+
+# debug
+/nextjs-dsi/npm-debug.log*
+/nextjs-dsi/yarn-debug.log*
+/nextjs-dsi/yarn-error.log*
+
+# local env files
+/nextjs-dsi/.env.local
+/nextjs-dsi/.env.development.local
+/nextjs-dsi/.env.test.local
+/nextjs-dsi/.env.production.local
