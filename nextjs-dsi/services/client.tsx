@@ -1,17 +1,13 @@
-import dotenv from "dotenv";
-import contentful from "contentful";
+import { createClient } from "contentful";
 
-dotenv.config();
+const spaceID = process.env.CONTENFUL_SPACE_ID
+const accessToken = process.env.CONTENFUL_CONTEN_DELIVERY_API_KEY
+const hostName = process.env.CONTENFUL_HOST_NAME
+const environment = process.env.CONTENFUL_ENVIRONMANT
 
-const contentfulSpace = process.env.HOME;
-const client = contentful.createClient({
-  // This is the space ID. A space is like a project folder in Contentful terms
-  space: "developer_bookshelf",
-  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-  accessToken: "0b7f6x59a0"
-});
-// This API call will request an entry with the specified ID from the space defined at the top, using a space-specific access token.
-client
-  .getEntry("5PeGS2SoZGSa4GuiQsigQu")
-  .then(entry => console.log(entry))
-  .catch(err => console.log(err));
+export const client = createClient({
+  accessToken: accessToken,
+  space: spaceID,
+  host: hostName,
+  environment: environment,
+})

@@ -1,3 +1,6 @@
+import { GetServerSideProps } from "next";
+import { client } from "../services/client"
+
 export default function Home() {
   return (
     <>
@@ -287,4 +290,11 @@ export default function Home() {
   </>
 
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  // const result = await client.getEntry("6rIyVfgxr8HV4FGaqxR7c5")
+  return {
+    props: {}, // will be passed to the page component as props
+  }
 }

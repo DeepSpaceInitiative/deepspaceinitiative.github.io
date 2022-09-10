@@ -6,7 +6,6 @@ specifiers:
   '@types/react': ^18.0.19
   '@types/react-dom': ^18.0.6
   contentful: ^9.1.34
-  dotenv: ^16.0.2
   next: latest
   react: 17.0.2
   react-dom: 17.0.2
@@ -18,7 +17,6 @@ dependencies:
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
   contentful: 9.1.34
-  dotenv: 16.0.2
   next: 12.3.0_sfoxds7t5ydpegc3knd667wn6m
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -410,11 +408,6 @@ packages:
   /diff-sequences/29.0.0:
     resolution: {integrity: sha512-7Qe/zd1wxSDL4D/X/FPjOMB+ZMDt71W94KYaq05I2l0oQqgXgs7s4ftYYmV38gBSrPz2vcygxfs1xn0FT+rKNA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dev: false
-
-  /dotenv/16.0.2:
-    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
-    engines: {node: '>=12'}
     dev: false
 
   /escape-string-regexp/1.0.5:
