@@ -106,7 +106,7 @@ export default function Home() {
       </div>
     </div>
     <div className="row">
-      <div className="column">
+      <div className="column_3">
         <div className="card">
           <img src="images/crew/Wik.jpg" alt="wiktoria" className="cardimg" />
           <div className="container">
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="column">
+      <div className="column_3">
         <div className="card">
           <img src="images/crew/kyran.jpeg" alt="kyran" className="cardimg" />
           <div className="container">
@@ -135,27 +135,13 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="column">
+      <div className="column_3">
         <div className="card">
           <img src="images/crew/smitcrop.jpg" alt="smit" className="cardimg" />
           <div className="container">
             <h2>SMIT PATEL</h2>
             <p className="title">Coms Lead &amp; Program Manager</p>
             <p>Aerospace Engineering Graduate Student.</p>
-            {/*						<p>example@example.com</p>*/}
-            {/*						<p><button class="button">Contact</button></p>*/}
-          </div>
-        </div>
-      </div>
-      <div className="column">
-        <div className="card">
-          <img src="images/crew/haya2.jpeg" alt="haya" className="cardimg" />
-          <div className="container">
-            <h2>HAYA ALAA</h2>
-            <p className="title">Head of Egypt Branch </p>
-            <p>
-              Media and Marketing Coordinator at the Egyptian Space Agency.{" "}
-            </p>
             {/*						<p>example@example.com</p>*/}
             {/*						<p><button class="button">Contact</button></p>*/}
           </div>
