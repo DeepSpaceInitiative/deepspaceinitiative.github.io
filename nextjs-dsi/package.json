@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.12.1",
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.16",
     "@types/react": "^18.0.19",

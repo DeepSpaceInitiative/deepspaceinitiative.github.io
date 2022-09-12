@@ -5,8 +5,6 @@ import type { AppProps } from 'next/app'
 export default function MyApp({ Component, pageProps }: AppProps) {
   const child = <Component {...pageProps} />
   return (
-    <>
     <Layout children={child}/>
-    </>
   )
 }

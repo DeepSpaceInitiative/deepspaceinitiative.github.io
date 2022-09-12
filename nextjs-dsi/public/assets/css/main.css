@@ -2336,15 +2336,9 @@ font-family: "Source Sans Pro", "sans-serif";
     }
 
 .column {
-  float: left;
-  width: 25%;
-  margin-bottom: 16px;
-  padding: 1em 5px;
-}
-
-.column_3 {
-  float: left;
-  width: 33%;
+  float: inline-start;
+  min-width: 25%;
+  max-width: 33%;
   margin-bottom: 16px;
   padding: 1em 5px;
 }
@@ -2361,7 +2355,6 @@ font-family: "Source Sans Pro", "sans-serif";
         border: 1px solid black;
         vertical-align: middle;
         text-align: center;
-        display: block;
         object-fit: cover;
 }
 
@@ -2370,10 +2363,6 @@ font-family: "Source Sans Pro", "sans-serif";
     width: 50%;
     display: block;
   }
-  .column_3 {
-      width: 50%;
-      display: block;
-    }
   #crew {
       padding: 0em 5em;
     }
@@ -2384,10 +2373,6 @@ font-family: "Source Sans Pro", "sans-serif";
     width: 100%;
     display: block;
   }
-  .column_3 {
-      width: 100%;
-      display: block;
-    }
   #crew {
     padding: 0em, 2em;
   }
