@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -5,6 +6,14 @@ export default function Home() {
     <>
   {/* Intro */}
   <section id="intro" className="main style1 dark fullscreen">
+    <div className="absolute -z-10">
+        <Image
+            src="/images/home_images/main.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+        />
+    </div>
     <div className="content">
       <br /> <br /> <br />
       <h2>DEEP SPACE INITIATIVE</h2>
@@ -19,6 +28,14 @@ export default function Home() {
   </section>
   {/* One */}
   <section id="one" className="main right style2 dark fullscreen">
+    <div className="absolute -z-10">
+        <Image
+            src="/images/home_images/AHP1.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+        />
+    </div>
     <div className="content box style2">
       <header>
         <h2>ASTRONAUT HEALTH &amp; PERFORMANCE</h2>
@@ -30,6 +47,14 @@ export default function Home() {
   </section>
   {/* Two */}
   <section id="two" className="main style2 left dark fullscreen">
+    <div className="absolute -z-10">
+        <Image
+            src="/images/home_images/home21.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+        />
+    </div>
     <div className="content box style2">
       <header>
         <h2>
@@ -45,6 +70,14 @@ export default function Home() {
   </section>
   {/* Three */}
   <section id="three" className="main style2 right dark fullscreen">
+    <div className="absolute -z-10">
+        <Image
+            src="/images/home_images/STS.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+        />
+    </div>
     <div className="content box style2">
       <header>
         <h2>SPACE TRANSPORTATION SYSTEMS</h2>
@@ -56,12 +89,6 @@ export default function Home() {
       </Link>
     </div>
   </section>
-  {/*			<section id="four" class="main style2 fullscreen">*/}
-  {/*				<div padding-top="100px">*/}
-  {/*					<h4>"No dream is too high." - Buzz Aldrin</h4>*/}
-  {/*				</div>*/}
-  {/*			</section>*/}
-  {/* Contact */}
   <section id="careers" className="main style1 dark fullscreen">
     <div className="content">
       <header>
