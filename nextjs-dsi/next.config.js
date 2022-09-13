@@ -4,4 +4,5 @@ module.exports = {
       'images.ctfassets.net',
     ],
   },
+  distDir: 'build',
 }
