@@ -1439,7 +1439,7 @@ font-family: "Source Sans Pro", "sans-serif";
 		width: 45em;
 		max-width: 100%;
 		margin: 0 auto 2em auto;
-		font-color: white;
+		color: white;
 	}
 
 		.gallery article {
