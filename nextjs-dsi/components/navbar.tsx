@@ -28,14 +28,14 @@ export default function Navbar() {
           </ul>
         </nav>
       </header>
-      {/* <Script src="assets/js/jquery.min.js"/>
+      <Script src="assets/js/jquery.min.js"/>
       <Script src="assets/js/jquery.poptrox.min.js"/>
       <Script src="assets/js/jquery.scrolly.min.js"/>
       <Script src="assets/js/jquery.scrollex.min.js"/>
       <Script src="assets/js/browser.min.js"/>
       <Script src="assets/js/breakpoints.min.js"/>
       <Script src="assets/js/util.js"/>
-      <Script src="assets/js/main.js"/> */}
+      <Script src="assets/js/main.js"/>
     </Head>
   </>
   );
