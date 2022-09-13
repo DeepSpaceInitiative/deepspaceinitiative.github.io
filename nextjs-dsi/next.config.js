@@ -4,6 +4,4 @@ module.exports = {
       'images.ctfassets.net',
     ],
   },
-  distDir: 'build',
-  target: 'serverless',
 }
