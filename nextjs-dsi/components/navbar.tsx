@@ -5,8 +5,7 @@ import Script from 'next/script'
 export default function Navbar() {
   return (
     <>
-    <Head>
-      <header id="header" className="main dark">
+      <div id="header" className="main dark">
         <h1>
           <Link href='/'><a>DEEP SPACE INITIATIVE</a></Link>
         </h1>
@@ -27,16 +26,7 @@ export default function Navbar() {
             {/*						<li><Link href='/merch'><a>MERCH</a></Link></li>*/}
           </ul>
         </nav>
-      </header>
-      <Script src="assets/js/jquery.min.js"/>
-      <Script src="assets/js/jquery.poptrox.min.js"/>
-      <Script src="assets/js/jquery.scrolly.min.js"/>
-      <Script src="assets/js/jquery.scrollex.min.js"/>
-      <Script src="assets/js/browser.min.js"/>
-      <Script src="assets/js/breakpoints.min.js"/>
-      <Script src="assets/js/util.js"/>
-      <Script src="assets/js/main.js"/>
-    </Head>
+      </div>
   </>
   );
 }
