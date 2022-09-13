@@ -7,7 +7,7 @@ export default function About() {
           <h2>RESEARCH PROJECTS</h2>
         </header>
         <p>Enabling deep space exploration for the benefit of all Humankind</p>
-        <a href="#careers" className="button style2 down">
+        <a href="#careers" className="button style2">
           More
         </a>
       </div>
