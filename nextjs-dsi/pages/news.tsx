@@ -16,7 +16,7 @@ export default function Careers() {
           title="YouTube video player"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen=""
+          allowFullScreen={true}
         />
         <br /> <br /> <br />
         <iframe
@@ -26,7 +26,7 @@ export default function Careers() {
           title="YouTube video player"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen=""
+          allowFullScreen={true}
         />
         <br /> <br /> <br />
         <iframe
@@ -36,7 +36,7 @@ export default function Careers() {
           title="YouTube video player"
           frameBorder={0}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen=""
+          allowFullScreen={true}
         />
       </div>
     </section>

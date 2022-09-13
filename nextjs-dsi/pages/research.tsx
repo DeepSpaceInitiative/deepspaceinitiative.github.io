@@ -17,7 +17,7 @@ export default function About() {
         <div className="leftcolumn">
           <div className="card">
             <h2>Astronaut Health &amp; Performance</h2> <br />
-            <p align="justify">
+            <p style={{textAlign:'justify'}}>
               The challenges of Human Spaceflight remain of great concern, and
               need to be managed before being able to venture beyond Earth’s
               magnetosphere. The effects of microgravity on the cardiovascular
@@ -61,7 +61,7 @@ export default function About() {
         <div className="rightcolumn">
           <div className="card">
             <h2>Space Architecture</h2> <br />
-            <p align="justify">
+            <p style={{textAlign:'justify'}}>
               According to the AIAA Space Architecture Technical Committee, Space
               Architecture “encompasses architectural design of living and working
               environments in space related facilities, habitats, and
@@ -85,7 +85,7 @@ export default function About() {
         <div className="leftcolumn">
           <div className="card">
             <h2>Space Transportation Systems</h2> <br />
-            <p align="justify">
+            <p style={{textAlign:'justify'}}>
               Although we have been able to send rovers and other functionally
               smart spacecraft to the edge of our solar system, human spaceflight
               beyond LEO comes with added difficulties that we have yet to fully
