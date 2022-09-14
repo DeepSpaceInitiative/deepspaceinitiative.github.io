@@ -75,7 +75,7 @@ function memberRows(members: TeamMember[]) {
       { membersRow.map(member => {
         return <div className="column" key={member.id}>
           <div className="card">
-            <Image
+            <img
               src={"https:" + member.profileImage.fields.file.url}
               alt={member.profileImage.fields.description}
               className="cardimg"

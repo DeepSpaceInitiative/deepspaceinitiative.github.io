@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function About() {
   return (
     <>
@@ -39,7 +37,7 @@ export default function About() {
         </div>
         <div className="rightcolumn">
           <div className="fakeimg">
-            <Image
+            <img
               src="images/fulls/astro.jpg"
               className="image fit"
               title="Astronaut Health & Performance"
@@ -52,7 +50,7 @@ export default function About() {
       <div className="row">
         <div className="leftcolumn">
           <div className="fakeimg">
-            <Image
+            <img
               src="images/fulls/SA.jpeg"
               className="image fit"
               title="Space Architecture"
@@ -107,7 +105,7 @@ export default function About() {
         </div>
         <div className="rightcolumn">
           <div className="fakeimg">
-            <Image
+            <img
               src="images/fulls/rocket.jpeg"
               className="image fit"
               title="Space Transportation Systems"

@@ -6,6 +6,14 @@ export default function Home() {
     <>
   {/* Intro */}
   <section id="intro" className="main style1 dark fullscreen">
+    <div className="absolute -z-10">
+        <Image
+            src="/images/home_images/main.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+        />
+    </div>
     <div className="content">
       <br /> <br /> <br />
       <h2>DEEP SPACE INITIATIVE</h2>
