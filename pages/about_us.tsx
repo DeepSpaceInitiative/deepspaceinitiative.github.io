@@ -84,7 +84,9 @@ function memberRows(members: TeamMember[]) {
               <h2>{ member.firstName.toUpperCase() + " " + member.lastName.toUpperCase() }</h2>
               <p className="title">{member.title}</p>
               <p>
-                { documentToPlainTextString(member.bio as Block) }
+                { 
+                  documentToPlainTextString(member.bio as Block) 
+                }
               </p>
             </div>
           </div>

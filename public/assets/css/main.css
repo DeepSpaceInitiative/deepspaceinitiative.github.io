@@ -1951,6 +1951,8 @@ font-family: "Source Sans Pro", "sans-serif";
 
 		.main.fullscreen {
 			min-height: 100%;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
 		}
 
 		.main.style1 {
