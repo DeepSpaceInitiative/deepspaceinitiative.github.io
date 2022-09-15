@@ -1,7 +1,6 @@
 export default function About() {
   return (
   <>
-  {/* News */}
   <section id="contact" className="main style3 dark fullscreen">
     <div className="content">
       <header>

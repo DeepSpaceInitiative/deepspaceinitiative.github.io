@@ -1,6 +1,6 @@
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
 import Link from "next/link"
-import { BlogListItem, getBlogListItems } from "../services/blogs_service"
+import { BlogListItem, getBlogListItems } from "../../services/blogs_service"
 
 export default function Blogs(props: { blogs: BlogListItem[] }) {
   return (
@@ -8,7 +8,7 @@ export default function Blogs(props: { blogs: BlogListItem[] }) {
     <section id="careers" className="main style2 dark fullscreen">
       <div className="content">
         <header>
-          <h2>BLOGS</h2>
+          <h2>NEWS</h2>
           <br />
         </header>
         <div className="gallery">
