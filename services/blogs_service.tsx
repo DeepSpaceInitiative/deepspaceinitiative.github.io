@@ -2,6 +2,7 @@ import Contentful, { Entry } from "contentful";
 import { client } from "./client";
 import { TeamMember } from "./team_service";
 
+
 interface InternalBlogListItem { 
   title: Contentful.EntryFields.Text,
   description: Contentful.EntryFields.Text,
