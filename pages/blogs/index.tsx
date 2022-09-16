@@ -1,4 +1,5 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
+import { GetStaticProps } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { BlogListItem, getBlogListItems } from "../../services/blogs_service"
 
@@ -34,11 +35,13 @@ function blogRows(blogs: BlogListItem[]) {
     <div className="article" key={blog.id}> 
       <Link href={`/blogs/${encodeURIComponent(blog.id)}`}>
         <a>
-          <img
-            style={{float:"inline-start", borderStyle:'outset', borderBlockColor:'#ffffff', borderWidth:'1px', margin:'20px'}}
+          <Image
             src={"https:" + blog.blogImage.fields.file.url}
             alt={blog.blogImage.fields.description}
-            className="image"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="cover"
           />
           <h2 className="title">{blog.title}</h2>
           <h3 className="title">By: { blog.authorName }</h3>
