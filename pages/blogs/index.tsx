@@ -42,6 +42,7 @@ function blogRows(blogs: BlogListItem[]) {
             height="100%"
             layout="responsive"
             objectFit="cover"
+            quality={60}
           />
           <h2 className="title">{blog.title}</h2>
           <h3 className="title">By: { blog.authorName }</h3>

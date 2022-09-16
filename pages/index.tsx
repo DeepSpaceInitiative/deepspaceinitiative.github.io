@@ -11,7 +11,7 @@ export default function Home() {
             src="/images/home_images/main.jpg"
             layout="fill"
             objectFit="cover"
-            quality={100}
+            quality={60}
         />
     </div>
     <div className="content">
@@ -33,7 +33,7 @@ export default function Home() {
             src="/images/home_images/AHP1.jpg"
             layout="fill"
             objectFit="cover"
-            quality={100}
+            quality={60}
         />
     </div>
     <div className="content box style2">
@@ -52,7 +52,7 @@ export default function Home() {
             src="/images/home_images/home21.jpg"
             layout="fill"
             objectFit="cover"
-            quality={100}
+            quality={60}
         />
     </div>
     <div className="content box style2">
@@ -75,7 +75,7 @@ export default function Home() {
             src="/images/home_images/STS.jpg"
             layout="fill"
             objectFit="cover"
-            quality={100}
+            quality={60}
         />
     </div>
     <div className="content box style2">
