@@ -2336,7 +2336,7 @@ font-family: "Source Sans Pro", "sans-serif";
     }
 
 .column {
-  float: inline-start;
+  float: left;
   min-width: 25%;
   max-width: 33%;
   margin-bottom: 16px;
