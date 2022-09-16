@@ -41,7 +41,7 @@ export const getBlogListItems = async (): Promise<BlogListItem[]> =>
   client
     .getEntries<InternalBlogListItem>({
       content_type: 'blog',
-      order: 'sys.createdAt',
+      order: '-fields.publishedAt',
     })
     .then(result =>
       result.items.map(blogItem => {
