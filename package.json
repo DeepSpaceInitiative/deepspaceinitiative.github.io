@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "@contentful/rich-text-types": "^15.12.1",
     "@types/jest": "^29.0.2",
     "@types/node": "^18.7.17",

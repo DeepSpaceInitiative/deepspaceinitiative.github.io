@@ -37,7 +37,7 @@ export default function Footer() {
 <ul className="menu">
   <li>© DEEP SPACE INITIATIVE</li>
   <li>
-    Design: <a href="https://html5up.net">HTML5 UP</a>
+    <a href="https://html5up.net">Design</a>
   </li>
 </ul>
 </footer>

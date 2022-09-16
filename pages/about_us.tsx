@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next"
+import { GetStaticProps } from "next"
 import { getTeamMembers, TeamMember } from "../services/team_service"
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { Block } from '@contentful/rich-text-types'
@@ -61,11 +61,12 @@ export default function Home(props: { members: TeamMember[] }) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       members: await getTeamMembers(),
     },
+    revalidate: 86400 // one day in seconds (to avoid hitting contentful with so many req)
   }
 }
 

@@ -18,7 +18,7 @@ export default function Navbar() {
               <Link href='/research'><a>RESEARCH</a></Link>
             </li>
             <li>
-              <Link href='/news'><a>NEWS</a></Link>
+              <Link href='/blogs'><a>NEWS</a></Link>
             </li>
             <li>
               <Link href='/careers'><a>CAREERS</a></Link>
