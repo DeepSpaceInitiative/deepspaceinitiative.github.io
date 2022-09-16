@@ -1910,7 +1910,7 @@ font-family: "Source Sans Pro", "sans-serif";
 					}
 
 				#header nav {
-					display: none;
+					display: block;
 				}
 
 		}
