@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Play");
 @import url("fontawesome-all.min.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /*
 	Big Picture by HTML5 UP
@@ -620,7 +623,7 @@ font-family: "Source Sans Pro", "sans-serif";
 		font-style: italic;
 	}
 
-	p, ul, ol, dl, table {
+	p, ol, dl, table {
 		margin-bottom: 1em;
 	}
 
@@ -1836,7 +1839,7 @@ font-family: "Source Sans Pro", "sans-serif";
 
 /* Header */
 
-	#header {
+	/* #header {
 		position: fixed;
 		z-index: 10000;
 		left: 0;
@@ -1859,9 +1862,9 @@ font-family: "Source Sans Pro", "sans-serif";
 
 			#header h1 a {
 				font-size: 1.25em;
-			}
+			} */
 
-		#header nav {
+		/* #header nav {
 			position: absolute;
 			right: 0.5em;
 			top: 0;
@@ -1887,11 +1890,11 @@ font-family: "Source Sans Pro", "sans-serif";
 						line-height: 3em;
 						padding: 0 0.5em 0 0.5em;
 						outline: 0;
-					}
+					} */
 
 		@media screen and (max-width: 736px) {
 
-			#header {
+			/* #header {
 				height: 2.5em;
 				line-height: 2.5em;
 			}
@@ -1911,7 +1914,7 @@ font-family: "Source Sans Pro", "sans-serif";
 
 				#header nav {
 					display: block;
-				}
+				} */
 
 		}
 

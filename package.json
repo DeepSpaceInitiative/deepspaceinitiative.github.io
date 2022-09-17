@@ -13,10 +13,13 @@
     "@types/node": "^18.7.17",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.11",
     "contentful": "^9.2.4",
     "next": "latest",
+    "postcss": "^8.4.16",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3"
   }
 }
