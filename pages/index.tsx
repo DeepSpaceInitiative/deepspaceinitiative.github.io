@@ -28,7 +28,7 @@ export default function Home() {
     <div className="absolute -z-10">
         <img
             src="images/home_images/AHP1.jpg"
-            className="image fit"
+            className="image fill"
         />
     </div>
     <div className="content box style2">
@@ -45,7 +45,7 @@ export default function Home() {
     <div className="absolute -z-10">
         <img
             src="images/home_images/home21.jpg"
-            className="image fit"
+            className="image fill"
         />
     </div>
     <div className="content box style2">
@@ -66,7 +66,7 @@ export default function Home() {
     <div className="absolute -z-10">
         <img
             src="images/home_images/STS.jpg"
-            className="image fit"
+            className="image fill"
         />
     </div>
     <div className="content box style2">
