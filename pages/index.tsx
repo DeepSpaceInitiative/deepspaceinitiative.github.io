@@ -7,7 +7,7 @@ export default function Home() {
   <section id="intro" className="main style1 dark fullscreen">
     <div className="absolute -z-10">
         <img
-            src="/images/home_images/main.jpg"
+            src="images/home_images/main.jpg"
             className="image fit"
         />
     </div>
@@ -27,7 +27,7 @@ export default function Home() {
   <section id="one" className="main right style2 dark fullscreen">
     <div className="absolute -z-10">
         <img
-            src="/images/home_images/AHP1.jpg"
+            src="images/home_images/AHP1.jpg"
             className="image fit"
         />
     </div>
@@ -44,7 +44,7 @@ export default function Home() {
   <section id="two" className="main style2 left dark fullscreen">
     <div className="absolute -z-10">
         <img
-            src="/images/home_images/home21.jpg"
+            src="images/home_images/home21.jpg"
             className="image fit"
         />
     </div>
@@ -65,7 +65,7 @@ export default function Home() {
   <section id="three" className="main style2 right dark fullscreen">
     <div className="absolute -z-10">
         <img
-            src="/images/home_images/STS.jpg"
+            src="images/home_images/STS.jpg"
             className="image fit"
         />
     </div>
