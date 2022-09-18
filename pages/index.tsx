@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -7,11 +6,9 @@ export default function Home() {
   {/* Intro */}
   <section id="intro" className="main style1 dark fullscreen">
     <div className="absolute -z-10">
-        <Image
+        <img
             src="/images/home_images/main.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={60}
+            className="image fit"
         />
     </div>
     <div className="content">
@@ -29,11 +26,9 @@ export default function Home() {
   {/* One */}
   <section id="one" className="main right style2 dark fullscreen">
     <div className="absolute -z-10">
-        <Image
+        <img
             src="/images/home_images/AHP1.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={60}
+            className="image fit"
         />
     </div>
     <div className="content box style2">
@@ -48,11 +43,9 @@ export default function Home() {
   {/* Two */}
   <section id="two" className="main style2 left dark fullscreen">
     <div className="absolute -z-10">
-        <Image
+        <img
             src="/images/home_images/home21.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={60}
+            className="image fit"
         />
     </div>
     <div className="content box style2">
@@ -71,11 +64,9 @@ export default function Home() {
   {/* Three */}
   <section id="three" className="main style2 right dark fullscreen">
     <div className="absolute -z-10">
-        <Image
+        <img
             src="/images/home_images/STS.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={60}
+            className="image fit"
         />
     </div>
     <div className="content box style2">
