@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import MainImage from '/images/home_images/main.jpg'
-import AHP1Image from '/images/home_images/AHP1.jpg'
-import Home21Image from '/images/home_images/home21.jpg'
-import STSImage from '/images/home_images/sts.jpg'
+import mainImage from '/public/images/home_images/main.jpg'
+import AHP1Image from '/public/images/home_images/AHP1.jpg'
+import home21Image from '/public/images/home_images/home21.jpg'
+import STSImage from '/public/images/home_images/sts.jpg'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
   <section id="intro" className="main style1 dark fullscreen">
     <div className="absolute -z-10">
         <Image
-            src={MainImage}
+            src={mainImage}
             layout='responsive'
             objectFit='cover'
         />
@@ -51,7 +51,7 @@ export default function Home() {
   <section id="two" className="main style2 left dark fullscreen">
     <div className="absolute -z-10">
         <Image
-            src={Home21Image}
+            src={home21Image}
             layout='responsive'
             objectFit='cover'
         />
