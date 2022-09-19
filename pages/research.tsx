@@ -1,3 +1,8 @@
+import astroImage from 'public/images/fulls/astro.jpg'
+import SAImage from 'public/images/fulls/SA.jpeg'
+import rocketImage from 'public/images/fulls/rocket.jpeg'
+import Image from 'next/image'
+
 export default function About() {
   return (
     <>
@@ -37,8 +42,10 @@ export default function About() {
         </div>
         <div className="rightcolumn">
           <div className="fakeimg">
-            <img
-              src="images/fulls/astro.jpg"
+            <Image
+              src={astroImage}
+              layout='responsive'
+              objectFit='cover'
               className="image fit"
               title="Astronaut Health & Performance"
               alt=""
@@ -50,8 +57,10 @@ export default function About() {
       <div className="row">
         <div className="leftcolumn">
           <div className="fakeimg">
-            <img
-              src="images/fulls/SA.jpeg"
+            <Image
+              src={SAImage}
+              layout='responsive'
+              objectFit='cover'
               className="image fit"
               title="Space Architecture"
               alt=""
@@ -105,8 +114,10 @@ export default function About() {
         </div>
         <div className="rightcolumn">
           <div className="fakeimg">
-            <img
-              src="images/fulls/rocket.jpeg"
+            <Image
+              src={rocketImage}
+              layout='responsive'
+              objectFit='cover'
               className="image fit"
               title="Space Transportation Systems"
               alt=""
