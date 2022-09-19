@@ -3,7 +3,7 @@ import Link from 'next/link'
 import mainImage from '/public/images/home_images/main.jpg'
 import AHP1Image from '/public/images/home_images/AHP1.jpg'
 import home21Image from '/public/images/home_images/home21.jpg'
-import STSImage from '/public/images/home_images/sts.jpg'
+import STSImage from '/public/images/home_images/STS.jpg'
 
 export default function Home() {
   return (
