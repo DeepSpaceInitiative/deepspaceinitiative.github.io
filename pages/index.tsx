@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import MainImage from '/public/images/home_images/main.jpg'
-import AHP1Image from '/public/images/home_images/AHP1.jpg'
-import Home21Image from '/public/images/home_images/home21.jpg'
-import STSImage from '/public/images/home_images/sts.jpg'
+import MainImage from '/images/home_images/main.jpg'
+import AHP1Image from '/images/home_images/AHP1.jpg'
+import Home21Image from '/images/home_images/home21.jpg'
+import STSImage from '/images/home_images/sts.jpg'
 
 export default function Home() {
   return (
