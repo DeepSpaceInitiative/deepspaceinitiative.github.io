@@ -1,4 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import MainImage from '../public/images/home_images/main.jpg'
+import AHP1Image from '../public/images/home_images/AHP1.jpg'
+import Home21Image from '../public/images/home_images/home21.jpg'
+import STSImage from '../public/images/home_images/sts.jpg'
 
 export default function Home() {
   return (
@@ -6,9 +11,10 @@ export default function Home() {
   {/* Intro */}
   <section id="intro" className="main style1 dark fullscreen">
     <div className="absolute -z-10">
-        <img
-            src="images/home_images/main.jpg"
-            className="image fit"
+        <Image
+            src={MainImage}
+            layout='responsive'
+            objectFit='cover'
         />
     </div>
     <div className="content">
@@ -26,9 +32,10 @@ export default function Home() {
   {/* One */}
   <section id="one" className="main right style2 dark fullscreen">
     <div className="absolute -z-10">
-        <img
-            src="images/home_images/AHP1.jpg"
-            className="image fill"
+        <Image
+            src={AHP1Image}
+            layout='responsive'
+            objectFit='cover'
         />
     </div>
     <div className="content box style2">
@@ -43,9 +50,10 @@ export default function Home() {
   {/* Two */}
   <section id="two" className="main style2 left dark fullscreen">
     <div className="absolute -z-10">
-        <img
-            src="images/home_images/home21.jpg"
-            className="image fill"
+        <Image
+            src={Home21Image}
+            layout='responsive'
+            objectFit='cover'
         />
     </div>
     <div className="content box style2">
@@ -64,9 +72,10 @@ export default function Home() {
   {/* Three */}
   <section id="three" className="main style2 right dark fullscreen">
     <div className="absolute -z-10">
-        <img
-            src="images/home_images/STS.jpg"
-            className="image fill"
+        <Image
+            src={STSImage}
+            layout='responsive'
+            objectFit='cover'
         />
     </div>
     <div className="content box style2">
