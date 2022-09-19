@@ -2205,45 +2205,6 @@ body.is-touch .main {
   }
 }
 
-/* Intro */
-
-#intro {
-  background: url("../../images/home_images/main.jpg");
-  background-size: cover;
-  /*background-attachment: fixed; */
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-/* One */
-
-#one {
-  background: url("../../images/home_images/AHP1.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-
-/* Two */
-
-#two {
-  background: url("../../images/home_images/home21.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-/* Three */
-
-#three {
-  background: url("../../images/home_images/STS.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-
-#four {
-  background: url("../../images/home_images/Home-Last.jpg");
-  background-size: cover;
-  background-position: center center;
-}
-
 /* Work */
 
 #news,
