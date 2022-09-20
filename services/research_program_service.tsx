@@ -16,7 +16,7 @@ export const getResearchPrograms = async (): Promise<ResearchProgramItem[]> =>
   client
     .getEntries<InternalResearchProgramItem>({
       content_type: 'researchProgram',
-      order: 'sys.createdAt',
+      order: '-fields.applicationStartDate',
     })
     .then(result =>
       result.items.map(researchProgram => {
@@ -48,7 +48,7 @@ export const getResearchProgramByID = async (): Promise<ResearchProgramItemsID[]
 interface InternalResearchProgram { 
   title: Contentful.EntryFields.Text,
   description: Contentful.EntryFields.RichText,
-  projects: Contentful.EntryCollection<InternalResearchProject>,
+  projects: Contentful.EntryCollection<InternalResearchProject> | undefined,
 }
 
 interface InternalResearchProject {
@@ -61,13 +61,13 @@ export interface ResearchProgram {
   id: string,
   title: string,
   description: Contentful.EntryFields.RichText,
-  projects: Contentful.EntryCollection<ResearchProject>,
+  projects: Contentful.EntryCollection<ResearchProject> | undefined,
 }
 
 export interface ResearchProject {
-  images: Contentful.AssetCollection,
   title: string,
   description: Contentful.EntryFields.RichText,
+  images: Contentful.AssetCollection,
 }
 
 export const getResearchProgram = async (id: string): Promise<ResearchProgram> => 
