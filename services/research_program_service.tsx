@@ -48,26 +48,26 @@ export const getResearchProgramByID = async (): Promise<ResearchProgramItemsID[]
 interface InternalResearchProgram { 
   title: Contentful.EntryFields.Text,
   description: Contentful.EntryFields.RichText,
-  projects: Contentful.EntryCollection<InternalResearchProject> | undefined,
+  projects: Contentful.Entry<InternalResearchProject>[]
 }
 
 interface InternalResearchProject {
   title: Contentful.EntryFields.Text,
   description: Contentful.EntryFields.RichText,
-  images: Contentful.AssetCollection,
+  images: Contentful.Asset[],
 }
 
 export interface ResearchProgram { 
   id: string,
   title: string,
   description: Contentful.EntryFields.RichText,
-  projects: Contentful.EntryCollection<ResearchProject> | undefined,
+  projects: Contentful.Entry<ResearchProject>[],
 }
 
 export interface ResearchProject {
   title: string,
   description: Contentful.EntryFields.RichText,
-  images: Contentful.AssetCollection,
+  images: Contentful.Asset[],
 }
 
 export const getResearchProgram = async (id: string): Promise<ResearchProgram> => 
@@ -77,5 +77,5 @@ export const getResearchProgram = async (id: string): Promise<ResearchProgram> =
       return { 
           id: result.sys.id, 
           ...result.fields,
-        } 
+        }
       })
