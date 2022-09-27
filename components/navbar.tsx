@@ -73,7 +73,7 @@ export default function NavBar() {
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x- md:space-y-0">
               {makeNavigationItem({title: "about us", link: "/about_us"})}
-              {makeNavigationItem({title: "research", link: "/research"})}
+              {makeNavigationItem({title: "research", link: "/research_programs"})}
               {makeNavigationItem({title: "news", link: "/blogs"})}
               {makeNavigationItem({title: "careers", link: "/careers"})}
             </ul>
