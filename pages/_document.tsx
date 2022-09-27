@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <title>Deep Space Initiative</title>
         <Script src="assets/js/jquery.min.js"/>
         <Script src="assets/js/jquery.poptrox.min.js"/>
         <Script src="assets/js/jquery.scrolly.min.js"/>

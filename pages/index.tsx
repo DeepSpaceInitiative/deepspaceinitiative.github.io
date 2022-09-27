@@ -93,7 +93,9 @@ export default function Home() {
       <p>UNSOLICITED APPLICANTS ARE VERY WELCOME </p>
       <p>SEND US YOUR CV &amp; A SHORT DESCRIPTION OF HOW YOU CAN HELP DSI! </p>
       <br /> <br />
-      <p>DeepSpaceInitiative@gmail.com</p>
+      <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
+        <a><p>admin@deepspaceinitiative.org</p></a>
+      </Link>
     </div>
   </section>
   </>

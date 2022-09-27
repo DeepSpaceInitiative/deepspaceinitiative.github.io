@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Careers() {
   return (
     <>
@@ -18,7 +20,9 @@ export default function Careers() {
 			<p>Abstracts for each research project have been accepted at this year’s International Astronautical Congress (IAC) in Paris, and upon selection, you will have the opportunity to work on the manuscript along with your team and mentor! </p>
 			<br> <br> <br> <br> <br> <br> <br> */}
     <p> Information about our Andromida program will be announced soon </p>
-    <p>For additional questions, contact DeepSpaceInitiative@gmail.com</p>
+    <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
+      <a><p>For additional questions, contact admin@deepspaceinitiative.org</p></a>
+    </Link>
   </div>
 </section>
 

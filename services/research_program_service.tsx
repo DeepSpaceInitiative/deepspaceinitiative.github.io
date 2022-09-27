@@ -3,13 +3,13 @@ import { client } from "./client";
 
 interface InternalResearchProgramItem { 
   title: Contentful.EntryFields.Text,
-  description: Contentful.EntryFields.RichText,
+  subtitle: Contentful.EntryFields.Text,
 }
 
 export interface ResearchProgramItem { 
   id: string,
   title: Contentful.EntryFields.Text,
-  description: Contentful.EntryFields.RichText,
+  subtitle: Contentful.EntryFields.Text,
 }
 
 export const getResearchPrograms = async (): Promise<ResearchProgramItem[]> => 
