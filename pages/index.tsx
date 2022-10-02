@@ -39,7 +39,7 @@ export default function Home() {
         <h2>ASTRONAUT HEALTH &amp; PERFORMANCE</h2>
       </header>
       <Link href="/research">
-        <a><button>EXPLORE</button></a>
+        <a><button className='explore'>EXPLORE</button></a>
       </Link>
     </div>
   </section>
@@ -58,7 +58,7 @@ export default function Home() {
       </header>
       <Link href="/research">
         <a>
-          <button>EXPLORE</button>
+          <button className='explore'>EXPLORE</button>
         </a>
       </Link>
     </div>
@@ -76,7 +76,7 @@ export default function Home() {
       </header>
       <Link href="/research">
         <a>
-          <button>EXPLORE</button>
+          <button className='explore'>EXPLORE</button>
         </a>
       </Link>
     </div>
