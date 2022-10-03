@@ -40,7 +40,8 @@ export default function NavBar() {
   const collapsableItems  = () => {
     const navItems = [
       {title: "ABOUT US", link: "/about_us"},
-      {title: "RESEARCH", link: "/research_programs"},
+      {title: "RESEARCH TOPICS", link: "/research/topics"},
+      {title: "RESEARCH PROGRAMS", link: "/research/programs"},
       {title: "NEWS", link: "/blogs"},
       {title: "CAREERS", link: "/careers"}
     ]
