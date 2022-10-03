@@ -51,11 +51,7 @@ interface InternalResearchProgram {
   projects: Contentful.Entry<InternalResearchProject>[]
 }
 
-interface InternalResearchProject {
-  title: Contentful.EntryFields.Text,
-  description: Contentful.EntryFields.RichText,
-  images: Contentful.Asset[],
-}
+interface InternalResearchProject {}
 
 export interface ResearchProgram { 
   id: string,
@@ -64,11 +60,7 @@ export interface ResearchProgram {
   projects: Contentful.Entry<ResearchProject>[],
 }
 
-export interface ResearchProject {
-  title: string,
-  description: Contentful.EntryFields.RichText,
-  images: Contentful.Asset[],
-}
+export interface ResearchProject {}
 
 export const getResearchProgram = async (id: string): Promise<ResearchProgram> => 
   client
