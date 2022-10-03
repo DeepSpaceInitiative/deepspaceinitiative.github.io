@@ -638,7 +638,6 @@ a {
   -webkit-transition: color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
-  color: #98c593;
 }
 
 sub {
@@ -766,20 +765,16 @@ button.anchored {
   left: 50%;
 }
 
-input[type="button"]:hover,
+.explore:hover,
 input[type="submit"]:hover,
-input[type="reset"]:hover,
-.button:hover,
-button:hover {
+input[type="reset"]:hover {
   color: #000000;
   background-color: #ffffff;
 }
 
-input[type="button"]:active,
+.explore:active,
 input[type="submit"]:active,
-input[type="reset"]:active,
-.button:active,
-button:active {
+input[type="reset"]:active {
   background-color: #ffffff;
   color: #000000;
 }

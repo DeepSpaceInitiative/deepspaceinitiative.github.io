@@ -1,85 +1,145 @@
+import { Dropdown, Navbar } from "@nextui-org/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useMemo, useState } from "react";
 
 export default function NavBar() {
-  const [navbar, setNavbar] = useState(false);
+  const router = useRouter();
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
+	const [activeMenu, setActiveMenu] = useState(undefined as string | undefined)
+  const [selectedDropdown, _] = useState(new Set([""]));
+
+  // Required
+	// this is how we enable again scroll after closing Navbar.Collapse
+	// when we dont click the Navbar.Toggle button
+	useEffect(() => {
+		document.body.style.overflow = null
+		isSideMenuOpen && (document.body.style.overflow = 'hidden')
+	}, [isSideMenuOpen])
+
+  // Flag is just to know if we are navigating from Navbar.Collapse or CollapseItem links
+	// any other place should not toggle the state of Navbar.Collapse
+	// pass the flag={true} to toggle side menu
+	const HandleSideMenu = (flag = false, index: string | undefined = undefined) => {
+		setActiveMenu(index)
+		flag && setIsSideMenuOpen(!isSideMenuOpen)
+		isSideMenuOpen && setIsSideMenuOpen(false)
+	}
 
   const makeNavigationItem = (props: {title: string, link: string}) => {
-    return <>
-        <li>  
-          <Link href={props.link}>
-            <button
-              className="p-0-0 text-white rounded-md outline-none hover:bg-black"
-              onClick={() => setNavbar(!navbar)}
-            >
-              <a className="text-white">{props.title.toUpperCase()}</a>
-            </button>
-          </Link>
-        </li>
-    </>
+    return <Link href={props.link}>
+     <Navbar.Link 
+      isActive={router.pathname == props.link} 
+      href={props.link}
+      onClick={() => HandleSideMenu(false, props.link)}>
+        <span>{props.title}</span>
+      </Navbar.Link>
+    </Link>
   }
 
-  return (
-    <nav className="w-full bg-black shadow sticky top-0 z-50">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div>
-          <div className="flex items-center justify-between md:block">
-            <Link href='/'>
-              <a><h1 className='text-white font-bold'>DEEP SPACE INITIATIVE</h1></a>
-            </Link>
-            <div className="md:hidden">
-              <button
-                className="p-auto text-white bg-black hover:bg-black rounded-md outline-none"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? (
-                  <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      viewBox="0 0 20 20"
-                  >
-                      <path
-                          fillRule="evenodd"
-                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                          fill="white"
-                          stroke="white"
-                      />
-                  </svg>
-                ) : (
-                  <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      viewBox="0 0 24 24"
-                  >
-                      <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          fill="white"
-                          stroke="white"
-                          d="M4 6h16M4 12h16M4 18h16"
-                      />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? "block" : "hidden"
-            }`}
+  const collapsableItems  = () => {
+    const navItems = [
+      {title: "ABOUT US", link: "/about_us"},
+      {title: "RESEARCH TOPICS", link: "/research/topics"},
+      {title: "RESEARCH PROGRAMS", link: "/research/programs"},
+      {title: "NEWS", link: "/blogs"},
+      {title: "CAREERS", link: "/careers"}
+    ]
+    return navItems.map((item, index) => (
+      <Navbar.CollapseItem 
+        key={item.link} 
+        isActive={router.pathname == item.link}
+        onClick={() => HandleSideMenu(true, item.link)}
+      >
+        <Link
+          color="inherit"
+          href={item.link}
+        >
+          {item.title}
+        </Link>
+      </Navbar.CollapseItem>
+    ))
+  }
+
+  const makeDropDownItem = (props: {title: string, link: string, description: string}) => {
+    return <Dropdown.Item key={props.link} description={props.description} showFullDescription>
+        <Link href={props.link}>
+          <Navbar.Link 
+            isActive={router.pathname == props.link} 
+            href={props.link}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x- md:space-y-0">
-              {makeNavigationItem({title: "about us", link: "/about_us"})}
-              {makeNavigationItem({title: "research", link: "/research_programs"})}
-              {makeNavigationItem({title: "news", link: "/blogs"})}
-              {makeNavigationItem({title: "careers", link: "/careers"})}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+            <span>{props.title}</span>
+          </Navbar.Link>
+        </Link>
+      </Dropdown.Item>
+  }
+
+  return (<Navbar
+    isCompact
+    disableBlur
+    variant="sticky"
+  >
+    <Navbar.Content>
+      <Navbar.Link href="/">
+        <Link href="/">
+          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">DEEP SPACE INITIATIVE</span>
+        </Link>
+      </Navbar.Link>
+    </Navbar.Content>
+    <Navbar.Content enableCursorHighlight="true" hideIn="xs">
+      {makeNavigationItem({title: "ABOUT US", link: "/about_us"})}
+      <Dropdown isBordered type="listbox">
+        <Navbar.Item>
+          <Dropdown.Button
+            ripple={false}
+            css={{
+              px: 0,
+              dflex: "center",
+              svg: { pe: "none" },
+            }}
+          >
+            RESEARCH
+          </Dropdown.Button>
+        </Navbar.Item>
+        <Dropdown.Menu
+          aria-label="Single selection actions"
+          selectionMode="single"
+          selectedKeys={selectedDropdown}
+          onAction ={(route) => { console.log(route); if (router.toString() != router.pathname) { router.push(route.toString()) }}}
+          css={{
+            $$dropdownMenuWidth: "340px",
+            $$dropdownItemHeight: "70px",
+            "& .nextui-dropdown-item": {
+              py: "$4",
+              // dropdown item left icon
+              svg: {
+                color: "$secondary",
+                mr: "$4",
+              },
+              // dropdown item title
+              "& .nextui-dropdown-item-content": {
+                w: "100%",
+                fontWeight: "$semibold",
+              },
+            },
+          }}
+        >
+          {makeDropDownItem({title: "TOPICS", link: "/research/topics", description: "Explore available topics"})}
+          {makeDropDownItem({title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"})}
+        </Dropdown.Menu>
+      </Dropdown>
+      {makeNavigationItem({title: "NEWS", link: "/blogs"})}
+      {makeNavigationItem({title: "CAREERS", link: "/careers"})}
+    </Navbar.Content>
+    <Navbar.Collapse isOpen={isSideMenuOpen}>
+      {collapsableItems()}
+    </Navbar.Collapse>
+    <Navbar.Brand showIn="xs">
+      <Navbar.Toggle 
+        aria-label="toggle navigation" 
+        isSelected={isSideMenuOpen}
+				onChange={() => HandleSideMenu(true, activeMenu)}/>
+    </Navbar.Brand>
+  </Navbar>
   );
 }

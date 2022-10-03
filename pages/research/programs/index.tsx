@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
-import { getResearchPrograms, ResearchProgramItem } from '../../services/research_program_service'
+import { getResearchPrograms, ResearchProgramItem } from '../../../services/research_program_service'
 
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
@@ -33,7 +33,7 @@ export default function ResearchPrograms(props: { blogs: ResearchProgramItem[] }
 function researchProgramsRows(researchPrograms: ResearchProgramItem[]) {
   return researchPrograms.map((researchProgram) =>
     <div key={researchProgram.id}> 
-      <Link href={`/research_programs/${encodeURIComponent(researchProgram.id)}`}>
+      <Link href={`/research/programs/${encodeURIComponent(researchProgram.id)}`}>
         <a>
           <h2 className="title underline text-center">{researchProgram.title}</h2>
           <h3 className="text-center">{researchProgram.subtitle}</h3>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getResearchProgramByID, getResearchProgram, ResearchProgram } from '../../services/research_program_service'
+import { getResearchProgramByID, getResearchProgram, ResearchProgram } from '../../../services/research_program_service'
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
 
@@ -36,34 +36,6 @@ export default function ResearchProgramPage(props: { researchProgram: ResearchPr
         <br />
       </div>
     </section>
-    {props.researchProgram.projects?.map(project => (<>
-      <section id="careers">
-      <div className="row">
-        <div className="leftcolumn">
-          <div className="card">
-            <h2>{project.fields.title}</h2> <br />
-            {documentToReactComponents(project.fields.description as Document, renderOptions)}
-          </div>
-        </div>
-        <div className="rightcolumn">
-          <div className="fakeimg">
-            <Image
-              src={"https:" + project.fields.images[0].fields.file.url}
-              width="100%"
-              height="100%"
-              layout="responsive"
-              objectFit='cover'
-              className="image fit"
-              title="Astronaut Health & Performance"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-      <br /> <br />
-    </section>
-    </>
-    ))}
     </>
   );
 }
