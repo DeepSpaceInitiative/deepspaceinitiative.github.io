@@ -53,7 +53,7 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
   if (isDuringApplicationDuration) {
     return (<>
       <Link href={researchProgram.applicationLink}>
-          <a><button className='explore'>APPLY HERE AS A RESEARCH OR A SUPERVISOR</button></a>
+          <a><button className='explore'>APPLY HERE</button></a>
       </Link>
     </>)
   }
