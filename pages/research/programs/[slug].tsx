@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { getResearchProgramByID, getResearchProgram, ResearchProgram } from '../../../services/research_program_service'
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
+import Link from 'next/link'
 
 const renderOptions: Options = {
   renderNode: {
@@ -34,10 +35,28 @@ export default function ResearchProgramPage(props: { researchProgram: ResearchPr
         <br />
         {documentToReactComponents(props.researchProgram.description as Document, renderOptions)}
         <br />
+        {applyNowSectionIfPossible(props.researchProgram)}
       </div>
     </section>
     </>
   );
+}
+
+const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
+  const today = new Date();
+  const isAfterApplicationStartDate = new Date(researchProgram.applicationStartDate) < today
+  const isBeforeApplicationEndDate = new Date(researchProgram.applicationEndDate) > today
+  const isDuringApplicationDuration = isAfterApplicationStartDate && isBeforeApplicationEndDate
+  console.log(isAfterApplicationStartDate)
+  console.log(isBeforeApplicationEndDate)
+  console.log(isDuringApplicationDuration)
+  if (isDuringApplicationDuration) {
+    return (<>
+      <Link href={researchProgram.applicationLink}>
+          <a><button className='explore'>APPLY HERE AS A RESEARCH OR A SUPERVISOR</button></a>
+      </Link>
+    </>)
+  }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
