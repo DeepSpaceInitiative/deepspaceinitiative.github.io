@@ -47,9 +47,6 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
   const isAfterApplicationStartDate = new Date(researchProgram.applicationStartDate) < today
   const isBeforeApplicationEndDate = new Date(researchProgram.applicationEndDate) > today
   const isDuringApplicationDuration = isAfterApplicationStartDate && isBeforeApplicationEndDate
-  console.log(isAfterApplicationStartDate)
-  console.log(isBeforeApplicationEndDate)
-  console.log(isDuringApplicationDuration)
   if (isDuringApplicationDuration) {
     return (<>
       <Link href={researchProgram.applicationLink}>
