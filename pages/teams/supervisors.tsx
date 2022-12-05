@@ -2,40 +2,19 @@ import { GetStaticProps } from "next"
 import { getSupervisors, TeamMember } from "../../services/team_service"
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { Block } from '@contentful/rich-text-types'
+import Link from "next/link"
 
 export default function Home(props: { members: TeamMember[] }) {
   return (
     <>
     <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
       <div>
-        <h2 className="p-6">ABOUT US</h2>
-        <div className="grid flex-grid lg:grid-cols-3 spacing-y-1">
-          <div className="row card">
-            <h2>WHO WE ARE</h2>
-            <p>
-              A core team of passionate engineers, scientists, and researchers,
-              along with a fleet of experts in the field of space exploration.
-            </p>
-          </div>
-          <div className="row card">
-            <h2>WHAT WE DO</h2>
-            <p>
-              Our goal is to enable deep space exploration while bringing more
-              opportunity and accessibility for everyone around the world.{" "}
-            </p>
-          </div>
-          <div className="row card">
-            <h2>WHY JOIN US</h2>
-            <p>
-              Work on real spaceflight challenges and gain skills in critical
-              thinking, problem definition, and solution development within a
-              multi-disciplinary environment.
-            </p>
-          </div>
-        </div>
+        <h2 className="p-6">OUR SUPERVISORS</h2>
+        <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfS5DghLB0TBSwcQFw0TX5QnKzEu_tt4TQOqsSjZGqNUnLOVQ/viewform">
+          <a><button className='explore'>APPLY HERE</button></a>
+        </Link>
       </div>
       <div>
-        <h2 className="p-6">THE TEAM</h2>
         <div className="grid flex-grid lg:grid-cols-3">
           { memberRows(props.members) }
         </div>
