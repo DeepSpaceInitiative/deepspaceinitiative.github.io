@@ -49,7 +49,7 @@ export default function Home(props: { members: TeamMember[] }) {
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      members: await getSupervisors(),
+      members: [],//await getSupervisors(),
     },
     revalidate: 86400 // one day in seconds (to avoid hitting contentful with so many req)
   }
