@@ -1,7 +1,7 @@
 import { Dropdown, Navbar } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
   const router = useRouter();
@@ -74,6 +74,49 @@ export default function NavBar() {
       </Dropdown.Item>
   }
 
+  const makeDropDown = (props: {
+    section: {title: string}, 
+    dropdownItems: {title: string, link: string, description: string}[]
+  }) => (<Dropdown isBordered type="listbox">
+      <Navbar.Item>
+        <Dropdown.Button
+          ripple={false}
+          css={{
+            px: 0,
+            dflex: "center",
+            svg: { pe: "none" },
+          }}
+        >
+          {props.section.title}
+        </Dropdown.Button>
+      </Navbar.Item>
+      <Dropdown.Menu
+        aria-label="Single selection actions"
+        selectionMode="single"
+        selectedKeys={selectedDropdown}
+        onAction ={(route) => { console.log(route); if (router.toString() != router.pathname) { router.push(route.toString()) }}}
+        css={{
+          $$dropdownMenuWidth: "340px",
+          $$dropdownItemHeight: "70px",
+          "& .nextui-dropdown-item": {
+            py: "$4",
+            // dropdown item left icon
+            svg: {
+              color: "$secondary",
+              mr: "$4",
+            },
+            // dropdown item title
+            "& .nextui-dropdown-item-content": {
+              w: "100%",
+              fontWeight: "$semibold",
+            },
+          },
+        }}
+      >
+        {props.dropdownItems.map(dropdownItem => makeDropDownItem(dropdownItem))}
+      </Dropdown.Menu>
+    </Dropdown>)
+
   return (<Navbar
     isCompact
     disableBlur
@@ -87,47 +130,21 @@ export default function NavBar() {
       </Navbar.Link>
     </Navbar.Content>
     <Navbar.Content enableCursorHighlight="true" hideIn="xs">
-      {makeNavigationItem({title: "ABOUT US", link: "/about_us"})}
-      <Dropdown isBordered type="listbox">
-        <Navbar.Item>
-          <Dropdown.Button
-            ripple={false}
-            css={{
-              px: 0,
-              dflex: "center",
-              svg: { pe: "none" },
-            }}
-          >
-            RESEARCH
-          </Dropdown.Button>
-        </Navbar.Item>
-        <Dropdown.Menu
-          aria-label="Single selection actions"
-          selectionMode="single"
-          selectedKeys={selectedDropdown}
-          onAction ={(route) => { console.log(route); if (router.toString() != router.pathname) { router.push(route.toString()) }}}
-          css={{
-            $$dropdownMenuWidth: "340px",
-            $$dropdownItemHeight: "70px",
-            "& .nextui-dropdown-item": {
-              py: "$4",
-              // dropdown item left icon
-              svg: {
-                color: "$secondary",
-                mr: "$4",
-              },
-              // dropdown item title
-              "& .nextui-dropdown-item-content": {
-                w: "100%",
-                fontWeight: "$semibold",
-              },
-            },
-          }}
-        >
-          {makeDropDownItem({title: "TOPICS", link: "/research/topics", description: "Explore available topics"})}
-          {makeDropDownItem({title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"})}
-        </Dropdown.Menu>
-      </Dropdown>
+      {makeDropDown({
+        section: {title: "ABOUT US"}, 
+        dropdownItems: [
+          {title: "CORE TEAM", link: "/teams/core", description: ""}, 
+          {title: "ADVISORS", link: "/teams/advisors", description: ""},
+          {title: "SUPERVISORS", link: "/teams/supervisors", description: ""}
+        ]}
+      )}
+      {makeDropDown({
+        section: {title: "RESEARCH"}, 
+        dropdownItems: [
+          {title: "TOPICS", link: "/research/topics", description: "Explore available topics"}, 
+          {title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"}
+        ]}
+      )}
       {makeNavigationItem({title: "NEWS", link: "/blogs"})}
       {makeNavigationItem({title: "CAREERS", link: "/careers"})}
     </Navbar.Content>
