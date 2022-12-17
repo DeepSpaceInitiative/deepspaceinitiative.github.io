@@ -20,6 +20,15 @@ const renderOptions: Options = {
         );
       }
     },
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+        if (node.data.target.fields.file.contentType == "application/pdf") {
+            return (<>
+            <object data={`https:${node.data.target.fields.file.url}`} type="application/pdf" className="h-screen w-full">
+                <p>Alternative text - include a link <a href={`https:${node.data.target.fields.file.url}`}>to the PDF!</a></p>
+            </object>
+            </>)
+        }
+    }
   },
 };
 

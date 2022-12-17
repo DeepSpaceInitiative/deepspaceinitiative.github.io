@@ -49,7 +49,6 @@ const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
   }
   return (<>
     <h2>Submitted projected</h2>
-    {console.log(researchProgram.projects.map(project => project.fields.team))}
     <br/>
     {researchProgram.projects.map(project =>
       (<>

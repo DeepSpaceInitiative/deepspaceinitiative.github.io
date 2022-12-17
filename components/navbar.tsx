@@ -96,7 +96,7 @@ export default function NavBar() {
         aria-label="Single selection actions"
         selectionMode="single"
         selectedKeys={selectedDropdown}
-        onAction ={(route) => { console.log(route); if (router.toString() != router.pathname) { router.push(route.toString()) }}}
+        onAction ={(route) => { if (router.toString() != router.pathname) { router.push(route.toString()) }}}
         css={{
           $$dropdownMenuWidth: "340px",
           $$dropdownItemHeight: "70px",
