@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getResearchProgramByID, getResearchProgram, ResearchProgram } from '../../../services/research_program_service'
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
@@ -36,10 +35,32 @@ export default function ResearchProgramPage(props: { researchProgram: ResearchPr
         {documentToReactComponents(props.researchProgram.description as Document, renderOptions)}
         <br />
         {applyNowSectionIfPossible(props.researchProgram)}
+        <br />
+        {showSubmittedProjectsIfAny(props.researchProgram)}
       </div>
     </section>
     </>
   );
+}
+
+const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
+  if (!(researchProgram.projects?.length > 0)) {
+    return (<></>);
+  }
+  return (<>
+    <h2>Submitted projected</h2>
+    {console.log(researchProgram.projects.map(project => project.fields.team))}
+    <br/>
+    {researchProgram.projects.map(project =>
+      (<>
+        <p>
+          <Link href={`/research/projects/${project.sys.id}`}>
+            {project.fields.thesis.toString()}
+          </Link>
+        </p>
+      </>)
+    )}
+  </>)
 }
 
 const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
@@ -59,7 +80,7 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   let blogsID = await getResearchProgramByID()
   return {
-    paths: blogsID.map(item =>  { return {params: {slug: item.id.toString()}}}),
+    paths: blogsID.map(item => { return { params: { slug: item.id.toString() } } }),
     fallback: 'blocking',
   }
 }
