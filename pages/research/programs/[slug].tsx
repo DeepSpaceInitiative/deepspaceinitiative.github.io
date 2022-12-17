@@ -48,17 +48,18 @@ const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
     return (<></>);
   }
   return (<>
-    <h2>Submitted projected</h2>
-    <br/>
-    {researchProgram.projects.map(project =>
-      (<>
-        <p>
-          <Link href={`/research/projects/${project.sys.id}`}>
-            {project.fields.thesis.toString()}
-          </Link>
-        </p>
-      </>)
-    )}
+    <h2>Submitted projects</h2>
+    <span className='p-10'>
+      {researchProgram.projects.map(project =>
+        (<>
+          <p>
+            <Link href={`/research/projects/${project.sys.id}`}>
+              {project.fields.thesis.toString()}
+            </Link>
+          </p>
+        </>)
+      )}
+    </span>
   </>)
 }
 
