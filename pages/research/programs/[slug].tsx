@@ -48,7 +48,7 @@ const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
     return (<></>);
   }
   return (<>
-    <h2>Submitted projects</h2>
+    <h3>Completed projects in 2022</h3>
     <span className='p-10'>
       {researchProgram.projects.map(project =>
         (<>
