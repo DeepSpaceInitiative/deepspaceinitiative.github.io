@@ -5,12 +5,7 @@ import { Block, Document } from '@contentful/rich-text-types'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { EntryFields } from "contentful"
 
-export default function Home(props: { 
-  members: TeamMember[], 
-  whatDoWeDo: EntryFields.RichText | null,
-  whoAreWe: EntryFields.RichText | null,
-  whyJoinUs: EntryFields.RichText | null,
- }) {
+export default function Home(props: { organization: Organization }) {
   return (
     <>
     <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
@@ -20,19 +15,19 @@ export default function Home(props: {
           <div className="row card">
             <h2>WHO WE ARE</h2>
             <p>
-              {documentToReactComponents(props.whoAreWe as Document, {})}
+              {documentToReactComponents(props.organization.whoAreWe as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHAT WE DO</h2>
             <p>
-            {documentToReactComponents(props.whatDoWeDo as Document, {})}
+            {documentToReactComponents(props.organization.whatDoWeDo as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHY JOIN US</h2>
             <p>
-            {documentToReactComponents(props.whyJoinUs as Document, {})}
+            {documentToReactComponents(props.organization.whyJoinUs as Document, {})}
             </p>
           </div>
         </div>
@@ -40,7 +35,7 @@ export default function Home(props: {
       <div>
         <h2 className="p-6">THE TEAM</h2>
         <div className="grid flex-grid lg:grid-cols-3">
-          { memberRows(props.members) }
+          { memberRows(props.organization.members) }
         </div>
         <div/>
       </div>
@@ -52,14 +47,14 @@ export default function Home(props: {
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      members: await getCoreTeamMembers(),
+      organization: await getCoreTeamMembers(),
     },
     revalidate: 86400 // one day in seconds (to avoid hitting contentful with so many req)
   }
 }
 
-function memberRows(organization: Organization) {
-  return organization.members.map(member =>
+function memberRows(members: TeamMember[]) {
+  return members.map(member =>
     <div className="card row space-y-1 p-2" key={member.id}>
       <img
         src={"https:" + member.profileImage.fields.file.url}
