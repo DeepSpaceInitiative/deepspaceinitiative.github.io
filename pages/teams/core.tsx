@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import { getCoreTeamMembers, TeamMember } from "../../services/team_service"
+import { getCoreTeamMembers, Organization, TeamMember } from "../../services/team_service"
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { Block, Document } from '@contentful/rich-text-types'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -58,8 +58,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 }
 
-function memberRows(members: TeamMember[]) {
-  return members.map(member =>
+function memberRows(organization: Organization) {
+  return organization.members.map(member =>
     <div className="card row space-y-1 p-2" key={member.id}>
       <img
         src={"https:" + member.profileImage.fields.file.url}
