@@ -1,6 +1,7 @@
 import Contentful, { Entry } from "contentful";
 import { Url } from "url";
 import { client } from "./client";
+import { TeamMember } from "./team_service";
 
 interface InternalResearchProgramItem { 
   title: Contentful.EntryFields.Text,
@@ -55,7 +56,13 @@ interface InternalResearchProgram {
   applicationLink: Url,
 }
 
-interface InternalResearchProject {}
+interface InternalResearchProject {
+  id: string,
+  thesis: string,
+  supervisor: TeamMember,
+  team: TeamMember[],
+  paper: Contentful.EntryFields.RichText
+}
 
 export interface ResearchProgram { 
   id: string,
@@ -67,7 +74,13 @@ export interface ResearchProgram {
   applicationLink: Url,
 }
 
-export interface ResearchProject {}
+export interface ResearchProject {
+  id: string,
+  thesis: string,
+  supervisor: TeamMember,
+  team: TeamMember[],
+  paper: Contentful.EntryFields.RichText
+}
 
 export const getResearchProgram = async (id: string): Promise<ResearchProgram> => 
   client
@@ -77,4 +90,5 @@ export const getResearchProgram = async (id: string): Promise<ResearchProgram> =
           id: result.sys.id, 
           ...result.fields,
         }
-      })
+      }
+    )
