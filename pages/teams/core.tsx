@@ -1,9 +1,16 @@
 import { GetStaticProps } from "next"
 import { getCoreTeamMembers, TeamMember } from "../../services/team_service"
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { Block } from '@contentful/rich-text-types'
+import { Block, Document } from '@contentful/rich-text-types'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { EntryFields } from "contentful"
 
-export default function Home(props: { members: TeamMember[] }) {
+export default function Home(props: { 
+  members: TeamMember[], 
+  whatDoWeDo: EntryFields.RichText | null,
+  whoAreWe: EntryFields.RichText | null,
+  whyJoinUs: EntryFields.RichText | null,
+ }) {
   return (
     <>
     <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
@@ -13,23 +20,19 @@ export default function Home(props: { members: TeamMember[] }) {
           <div className="row card">
             <h2>WHO WE ARE</h2>
             <p>
-              A core team of passionate engineers, scientists, and researchers,
-              along with a fleet of experts in the field of space exploration.
+              {documentToReactComponents(props.whoAreWe as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHAT WE DO</h2>
             <p>
-              Our goal is to enable deep space exploration while bringing more
-              opportunity and accessibility for everyone around the world.{" "}
+            {documentToReactComponents(props.whatDoWeDo as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHY JOIN US</h2>
             <p>
-              Work on real spaceflight challenges and gain skills in critical
-              thinking, problem definition, and solution development within a
-              multi-disciplinary environment.
+            {documentToReactComponents(props.whyJoinUs as Document, {})}
             </p>
           </div>
         </div>

@@ -12,6 +12,9 @@ export interface TeamMember {
 
 type Organization = {
   members: Entry<TeamMember>[]
+  whatDoWeDo: Contentful.EntryFields.RichText | null,
+  whoAreWe: Contentful.EntryFields.RichText | null,
+  whyJoinUs: Contentful.EntryFields.RichText | null,
 }
 
 export const getCoreTeamMembers = async (): Promise<TeamMember[]> => 
