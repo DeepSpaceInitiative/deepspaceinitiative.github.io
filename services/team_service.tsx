@@ -40,3 +40,4 @@ export const getSupervisors = async (): Promise<TeamMember[]> =>
     .getEntry<InternalOrganization>("3Z3RZtAF02jDkdqmumny8h")
     .then(result => result.fields.members.map(member => { return { id: member.sys.id, ...member.fields } }))
   
+    
