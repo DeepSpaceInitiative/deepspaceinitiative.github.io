@@ -1,9 +1,11 @@
 import { GetStaticProps } from "next"
-import { getCoreTeamMembers, TeamMember } from "../../services/team_service"
+import { getCoreTeamMembers, Organization, TeamMember } from "../../services/team_service"
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { Block } from '@contentful/rich-text-types'
+import { Block, Document } from '@contentful/rich-text-types'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { EntryFields } from "contentful"
 
-export default function Home(props: { members: TeamMember[] }) {
+export default function Home(props: { organization: Organization }) {
   return (
     <>
     <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
@@ -13,23 +15,19 @@ export default function Home(props: { members: TeamMember[] }) {
           <div className="row card">
             <h2>WHO WE ARE</h2>
             <p>
-              A core team of passionate engineers, scientists, and researchers,
-              along with a fleet of experts in the field of space exploration.
+              {documentToReactComponents(props.organization.whoAreWe as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHAT WE DO</h2>
             <p>
-              Our goal is to enable deep space exploration while bringing more
-              opportunity and accessibility for everyone around the world.{" "}
+            {documentToReactComponents(props.organization.whatDoWeDo as Document, {})}
             </p>
           </div>
           <div className="row card">
             <h2>WHY JOIN US</h2>
             <p>
-              Work on real spaceflight challenges and gain skills in critical
-              thinking, problem definition, and solution development within a
-              multi-disciplinary environment.
+            {documentToReactComponents(props.organization.whyJoinUs as Document, {})}
             </p>
           </div>
         </div>
@@ -37,7 +35,7 @@ export default function Home(props: { members: TeamMember[] }) {
       <div>
         <h2 className="p-6">THE TEAM</h2>
         <div className="grid flex-grid lg:grid-cols-3">
-          { memberRows(props.members) }
+          { memberRows(props.organization.members) }
         </div>
         <div/>
       </div>
@@ -49,7 +47,7 @@ export default function Home(props: { members: TeamMember[] }) {
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      members: await getCoreTeamMembers(),
+      organization: await getCoreTeamMembers(),
     },
     revalidate: 86400 // one day in seconds (to avoid hitting contentful with so many req)
   }
