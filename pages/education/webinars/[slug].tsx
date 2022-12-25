@@ -1,7 +1,7 @@
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, Document } from "@contentful/rich-text-types"
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Blog, getBlog, getBlogListItemsID } from '../../services/blogs_service';
+import { getWebinar, getWebinarListItemsID, Webinar } from '../../../services/webinars_service';
 
 const renderOptions: Options = {
   renderNode: {
@@ -9,8 +9,8 @@ const renderOptions: Options = {
       if (node.data.target.sys.contentType.sys.id === "videoEmbed") {
         return (
           <iframe
-            src={node.data.target.fields.embedUrl}
             className="w-full aspect-video"
+            src={node.data.target.fields.embedUrl}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             title={node.data.target.fields.title}
@@ -22,7 +22,7 @@ const renderOptions: Options = {
   },
 };
 
-export default function BlogPage(props: { blog: Blog }) {
+export default function WebinarPage(props: { blog: Webinar }) {
   return (
     <section id="news" className="main style3 dark fullscreen">
       <div className="content">
@@ -39,7 +39,7 @@ export default function BlogPage(props: { blog: Blog }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  let blogsID = await getBlogListItemsID()
+  let blogsID = await getWebinarListItemsID()
   return {
     paths: blogsID.map(item =>  { return {params: {slug: item.id.toString()}}}),
     fallback: 'blocking',
@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async(context) => {
   const blogID = context.params.slug as string 
-  const blog = await getBlog(blogID)
+  const blog = await getWebinar(blogID)
   return {
     props: { blog: blog },
   }

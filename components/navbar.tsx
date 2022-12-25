@@ -44,6 +44,7 @@ export default function NavBar() {
       {title: "SUPERVISORS", link: "/teams/supervisors"},
       {title: "RESEARCH TOPICS", link: "/research/topics"},
       {title: "RESEARCH PROGRAMS", link: "/research/programs"},
+      {title: "WEBINARS", link: "/education/webinars/7tI3shjYB7vL6xIlWQWfUo"},
       {title: "NEWS", link: "/blogs"},
       {title: "CAREERS", link: "/careers"}
     ]
@@ -145,6 +146,12 @@ export default function NavBar() {
         dropdownItems: [
           {title: "TOPICS", link: "/research/topics", description: "Explore available topics"}, 
           {title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"}
+        ]}
+      )}
+      {makeDropDown({
+        section: {title: "EDUCATION"}, 
+        dropdownItems: [
+          {title: "WEBINARS", link: "/education/webinars/7tI3shjYB7vL6xIlWQWfUo", description: "Explore previous webinars"},
         ]}
       )}
       {makeNavigationItem({title: "NEWS", link: "/blogs"})}

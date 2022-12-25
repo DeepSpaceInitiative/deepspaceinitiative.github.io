@@ -39,8 +39,7 @@ const renderOptions: Options = {
         return (
           <iframe
             src={node.data.target.fields.embedUrl}
-            width={560}
-            height={315}
+            className="w-full aspect-video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             title={node.data.target.fields.title}
