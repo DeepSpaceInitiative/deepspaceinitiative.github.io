@@ -22,7 +22,7 @@ export default function Home() {
         Increasing accessibility and opportunity for space research all over the
         world
       </p>
-      <Link href="/about_us">
+      <Link href="/teams/core">
         <a><button>LEARN MORE</button></a>
       </Link>
     </div>
