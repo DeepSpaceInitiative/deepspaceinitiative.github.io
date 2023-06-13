@@ -76,6 +76,7 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
   }
 }
 
+
 export const getStaticPaths: GetStaticPaths = async () => {
   let blogsID = await getResearchProgramByID()
   return {
