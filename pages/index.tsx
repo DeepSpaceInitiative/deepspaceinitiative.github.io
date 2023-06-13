@@ -87,12 +87,6 @@ export default function Home() {
         <h2>CONTACT US</h2>
         <br />
       </header>
-      <p>
-        WE ARE ALWAYS LOOKING FOR MOTIVATED AND PASSIONATE SPACE ENTHUSIASTS
-      </p>
-      <p>UNSOLICITED APPLICANTS ARE VERY WELCOME </p>
-      <p>SEND US YOUR CV &amp; A SHORT DESCRIPTION OF HOW YOU CAN HELP DSI! </p>
-      <br /> <br />
       <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
         <a><p>admin@deepspaceinitiative.org</p></a>
       </Link>

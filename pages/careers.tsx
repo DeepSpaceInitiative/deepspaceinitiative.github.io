@@ -9,9 +9,6 @@ export default function Careers() {
       <h2>CAREERS</h2>
       <br />
     </header>
-    <p>WE ARE ALWAYS LOOKING FOR MOTIVATED AND PASSIONATE SPACE ENTHUSIASTS</p>
-    <p> UNSOLICITED APPLICANTS ARE WELCOME </p>
-    <p> SEND US YOUR CV &amp; A SHORT DESCRIPTION OF HOW YOU CAN HELP DSI! </p>
     {/* 			<a href="https://forms.gle/hTRginKHtJvJg5om6">CLICK HERE TO SUBMIT YOUR APPLICATION.</a> */}
     <br /> <br /> <br /> <br /> <br /> <br /> <br />
     {/*	<p>  We are excited to announce that we are now accepting applications!! </p> 
