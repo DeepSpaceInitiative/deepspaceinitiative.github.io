@@ -15,20 +15,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export default function ResearchTopics(props: { topics: ResearchTopicItem[] }) {
   return (
-    <>
-    <section id="careers" className="main style2 dark fullscreen">
-      <div className="content">
-        <header>
-          <h2 className="text-center">RESEARCH TOPICS</h2>
-          <h3 className="text-center">Enabling deep space exploration for the benefit of all Humankind</h3>
-          <br />
-        </header>
-      </div>
-    </section>
     <div>
-      { researchTopicsRows(props.topics) }
+      <section id="careers" className="main style2 dark fullscreen">
+        <div className="content">
+          <header>
+            <h2 className="text-center">RESEARCH TOPICS</h2>
+            <h3 className="text-center">Enabling deep space exploration for the benefit of all Humankind</h3>
+            <br />
+          </header>
+        </div>
+      </section>
+      <div>
+        { researchTopicsRows(props.topics) }
+      </div>
     </div>
-    </>
   )
 }
 
