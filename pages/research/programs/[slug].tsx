@@ -47,20 +47,22 @@ const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
   if (!(researchProgram.projects?.length > 0)) {
     return (<></>);
   }
-  return (<div>
-    <h3>Completed projects in 2022</h3>
-    <span className='p-10'>
-      {researchProgram.projects.map(project =>
-        (<>
-          <p>
-            <Link href={`/research/projects/${project.sys.id}`}>
-              {project.fields.thesis.toString()}
-            </Link>
-          </p>
-        </>)
-      )}
-    </span>
-  </div>)
+  return (
+    <div>
+      <h3>Completed projects in 2022</h3>
+      <span className='p-10'>
+        {researchProgram.projects.map(project =>
+          (<>
+            <p>
+              <Link href={`/research/projects/${project.sys.id}`} legacyBehavior>
+                {project.fields.thesis.toString()}
+              </Link>
+            </p>
+          </>)
+        )}
+      </span>
+    </div>
+  );
 }
 
 const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
@@ -69,11 +71,11 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
   const isBeforeApplicationEndDate = new Date(researchProgram.applicationEndDate) > today
   const isDuringApplicationDuration = isAfterApplicationStartDate && isBeforeApplicationEndDate
   if (isDuringApplicationDuration && researchProgram.applicationLink != undefined) {
-    return (<>
+    return <>
       <Link href={researchProgram.applicationLink}>
-          <a><button className='explore'>APPLY HERE</button></a>
+          <button className='explore'>APPLY HERE</button>
       </Link>
-    </>)
+    </>;
   }
 }
 

@@ -27,14 +27,16 @@ export default function NavBar() {
 	}
 
   const makeNavigationItem = (props: {title: string, link: string}) => {
-    return <Link href={props.link}>
-     <Navbar.Link 
-      isActive={router.pathname == props.link} 
-      href={props.link}
-      onClick={() => HandleSideMenu(false, props.link)}>
-        <span>{props.title}</span>
-      </Navbar.Link>
-    </Link>
+    return (
+      <Link href={props.link} legacyBehavior>
+       <Navbar.Link 
+        isActive={router.pathname == props.link} 
+        href={props.link}
+        onClick={() => HandleSideMenu(false, props.link)}>
+          <span>{props.title}</span>
+        </Navbar.Link>
+      </Link>
+    );
   }
 
   const collapsableItems  = () => {
@@ -54,27 +56,26 @@ export default function NavBar() {
         isActive={router.pathname == item.link}
         onClick={() => HandleSideMenu(true, item.link)}
       >
-        <Link
-          color="inherit"
-          href={item.link}
-        >
+        <Link color="inherit" href={item.link} legacyBehavior>
           {item.title}
         </Link>
       </Navbar.CollapseItem>
-    ))
+    ));
   }
 
   const makeDropDownItem = (props: {title: string, link: string, description: string}) => {
-    return <Dropdown.Item key={props.link} description={props.description} showFullDescription>
-        <Link href={props.link}>
-          <Navbar.Link 
-            isActive={router.pathname == props.link} 
-            href={props.link}
-          >
-            <span>{props.title}</span>
-          </Navbar.Link>
-        </Link>
-      </Dropdown.Item>
+    return (
+      <Dropdown.Item key={props.link} description={props.description} showFullDescription>
+          <Link href={props.link} legacyBehavior>
+            <Navbar.Link 
+              isActive={router.pathname == props.link} 
+              href={props.link}
+            >
+              <span>{props.title}</span>
+            </Navbar.Link>
+          </Link>
+        </Dropdown.Item>
+    );
   }
 
   const makeDropDown = (props: {
@@ -120,52 +121,53 @@ export default function NavBar() {
       </Dropdown.Menu>
     </Dropdown>)
 
-  return (<Navbar
-    isCompact
-    disableBlur
-    variant="sticky"
-  >
-    <Navbar.Content>
-      <Navbar.Link href="/">
-        <Link href="/">
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">DEEP SPACE INITIATIVE</span>
-        </Link>
-      </Navbar.Link>
-    </Navbar.Content>
-    <Navbar.Content enableCursorHighlight="true" hideIn="xs">
-      {makeDropDown({
-        section: {title: "ABOUT US"}, 
-        dropdownItems: [
-          {title: "CORE TEAM", link: "/teams/core", description: ""}, 
-          {title: "ADVISORS", link: "/teams/advisors", description: ""},
-          {title: "SUPERVISORS", link: "/teams/supervisors", description: ""}
-        ]}
-      )}
-      {makeDropDown({
-        section: {title: "RESEARCH"}, 
-        dropdownItems: [
-          {title: "TOPICS", link: "/research/topics", description: "Explore available topics"}, 
-          {title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"}
-        ]}
-      )}
-      {makeDropDown({
-        section: {title: "EDUCATION"}, 
-        dropdownItems: [
-          {title: "WEBINARS", link: "/education/webinars/7tI3shjYB7vL6xIlWQWfUo", description: "Explore previous webinars"},
-        ]}
-      )}
-      {makeNavigationItem({title: "NEWS", link: "/blogs"})}
-      {makeNavigationItem({title: "CAREERS", link: "/careers"})}
-    </Navbar.Content>
-    <Navbar.Collapse isOpen={isSideMenuOpen}>
-      {collapsableItems()}
-    </Navbar.Collapse>
-    <Navbar.Brand showIn="xs">
-      <Navbar.Toggle 
-        aria-label="toggle navigation" 
-        isselected={isSideMenuOpen.toString()}
-				onChange={() => HandleSideMenu(true, activeMenu)}/>
-    </Navbar.Brand>
-  </Navbar>
+  return (
+    <Navbar
+      isCompact
+      disableBlur
+      variant="sticky"
+    >
+      <Navbar.Content>
+        <Navbar.Link href="/">
+          <Link href="/" legacyBehavior>
+            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">DEEP SPACE INITIATIVE</span>
+          </Link>
+        </Navbar.Link>
+      </Navbar.Content>
+      <Navbar.Content enableCursorHighlight="true" hideIn="xs">
+        {makeDropDown({
+          section: {title: "ABOUT US"}, 
+          dropdownItems: [
+            {title: "CORE TEAM", link: "/teams/core", description: ""}, 
+            {title: "ADVISORS", link: "/teams/advisors", description: ""},
+            {title: "SUPERVISORS", link: "/teams/supervisors", description: ""}
+          ]}
+        )}
+        {makeDropDown({
+          section: {title: "RESEARCH"}, 
+          dropdownItems: [
+            {title: "TOPICS", link: "/research/topics", description: "Explore available topics"}, 
+            {title: "PROGRAMS", link: "/research/programs", description: "Join our research teams by appplying to available programs"}
+          ]}
+        )}
+        {makeDropDown({
+          section: {title: "EDUCATION"}, 
+          dropdownItems: [
+            {title: "WEBINARS", link: "/education/webinars/7tI3shjYB7vL6xIlWQWfUo", description: "Explore previous webinars"},
+          ]}
+        )}
+        {makeNavigationItem({title: "NEWS", link: "/blogs"})}
+        {makeNavigationItem({title: "CAREERS", link: "/careers"})}
+      </Navbar.Content>
+      <Navbar.Collapse isOpen={isSideMenuOpen}>
+        {collapsableItems()}
+      </Navbar.Collapse>
+      <Navbar.Brand showIn="xs">
+        <Navbar.Toggle 
+          aria-label="toggle navigation" 
+          isselected={isSideMenuOpen.toString()}
+                  onChange={() => HandleSideMenu(true, activeMenu)}/>
+      </Navbar.Brand>
+    </Navbar>
   );
 }
