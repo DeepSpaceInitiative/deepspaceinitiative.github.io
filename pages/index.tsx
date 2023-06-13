@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import mainImage from 'public/images/home_images/main.jpg'
 import AHP1Image from 'public/images/home_images/AHP1.jpg'

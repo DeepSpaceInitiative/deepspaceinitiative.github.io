@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import { getResearchTopics, ResearchTopicItem } from 'services/research_topics_service'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 
 export const getStaticProps: GetStaticProps = async (context) => {

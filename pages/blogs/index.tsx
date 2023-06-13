@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from "next/link"
 import { BlogListItem, getBlogListItems } from "../../services/blogs_service"
 
