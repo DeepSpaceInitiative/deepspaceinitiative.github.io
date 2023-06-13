@@ -165,7 +165,7 @@ export default function NavBar() {
       <Navbar.Brand showIn="xs">
         <Navbar.Toggle 
           aria-label="toggle navigation" 
-          isselected={isSideMenuOpen.toString()}
+          isSelected={isSideMenuOpen}
                   onChange={() => HandleSideMenu(true, activeMenu)}/>
       </Navbar.Brand>
     </Navbar>

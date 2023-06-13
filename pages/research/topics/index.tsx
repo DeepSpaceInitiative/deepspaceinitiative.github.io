@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import { getResearchTopics, ResearchTopicItem } from 'services/research_topics_service'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -65,8 +65,8 @@ function researchTopicsRows(researchTopics: ResearchTopicItem[]) {
           <div className="fakeimg">
             <Image
               src={"https:" + researchTopic.image.fields.file.url}
-              width="100%"
-              height="100%"
+              width='100'
+              height='100'
               layout="responsive"
               objectFit='cover'
               className="image fit"

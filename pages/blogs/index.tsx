@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import Link from "next/link"
 import { BlogListItem, getBlogListItems } from "../../services/blogs_service"
 
@@ -38,8 +38,8 @@ function blogRows(blogs: BlogListItem[]) {
         <Image
           src={"https:" + blog.blogImage.fields.file.url}
           alt={blog.blogImage.fields.description}
-          width="100%"
-          height="100%"
+          width='100'
+          height='100'
           layout="responsive"
           objectFit="cover"
           quality={60}
