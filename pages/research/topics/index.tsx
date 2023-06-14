@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import { getResearchTopics, ResearchTopicItem } from 'services/research_topics_service'
 import { BLOCKS, Document } from '@contentful/rich-text-types'
-import Image from 'next/image'
+import Image from "next/image"
 import { documentToReactComponents, Options } from '@contentful/rich-text-react-renderer'
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -15,20 +15,20 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 export default function ResearchTopics(props: { topics: ResearchTopicItem[] }) {
   return (
-    <>
-    <section id="careers" className="main style2 dark fullscreen">
-      <div className="content">
-        <header>
-          <h2 className="text-center">RESEARCH TOPICS</h2>
-          <h3 className="text-center">Enabling deep space exploration for the benefit of all Humankind</h3>
-          <br />
-        </header>
-      </div>
-    </section>
     <div>
-      { researchTopicsRows(props.topics) }
+      <section id="careers" className="main style2 dark fullscreen">
+        <div className="content">
+          <header>
+            <h2 className="text-center">RESEARCH TOPICS</h2>
+            <h3 className="text-center">Enabling deep space exploration for the benefit of all Humankind</h3>
+            <br />
+          </header>
+        </div>
+      </section>
+      <div>
+        { researchTopicsRows(props.topics) }
+      </div>
     </div>
-    </>
   )
 }
 
@@ -65,8 +65,8 @@ function researchTopicsRows(researchTopics: ResearchTopicItem[]) {
           <div className="fakeimg">
             <Image
               src={"https:" + researchTopic.image.fields.file.url}
-              width="100%"
-              height="100%"
+              width='100'
+              height='100'
               layout="responsive"
               objectFit='cover'
               className="image fit"

@@ -24,7 +24,8 @@ const renderOptions: Options = {
 };
 
 export default function ResearchProgramPage(props: { researchProgram: ResearchProgram }) {
-  return (<>
+  return (
+  <div>
     <section id="news" className="main style1 dark fullscreen">
       <div className="content">
         <header>
@@ -38,7 +39,7 @@ export default function ResearchProgramPage(props: { researchProgram: ResearchPr
         {showSubmittedProjectsIfAny(props.researchProgram)}
       </div>
     </section>
-    </>
+  </div>
   );
 }
 
@@ -46,20 +47,22 @@ const showSubmittedProjectsIfAny = (researchProgram: ResearchProgram) => {
   if (!(researchProgram.projects?.length > 0)) {
     return (<></>);
   }
-  return (<>
-    <h3>Completed projects in 2022</h3>
-    <span className='p-10'>
-      {researchProgram.projects.map(project =>
-        (<>
-          <p>
-            <Link href={`/research/projects/${project.sys.id}`}>
-              {project.fields.thesis.toString()}
-            </Link>
-          </p>
-        </>)
-      )}
-    </span>
-  </>)
+  return (
+    <div>
+      <h3>Completed projects in 2022</h3>
+      <span className='p-10'>
+        {researchProgram.projects.map(project =>
+          (<>
+            <p>
+              <Link href={`/research/projects/${project.sys.id}`} legacyBehavior>
+                {project.fields.thesis.toString()}
+              </Link>
+            </p>
+          </>)
+        )}
+      </span>
+    </div>
+  );
 }
 
 const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
@@ -67,14 +70,15 @@ const applyNowSectionIfPossible = (researchProgram: ResearchProgram) => {
   const isAfterApplicationStartDate = new Date(researchProgram.applicationStartDate) < today
   const isBeforeApplicationEndDate = new Date(researchProgram.applicationEndDate) > today
   const isDuringApplicationDuration = isAfterApplicationStartDate && isBeforeApplicationEndDate
-  if (isDuringApplicationDuration) {
-    return (<>
+  if (isDuringApplicationDuration && researchProgram.applicationLink != undefined) {
+    return <>
       <Link href={researchProgram.applicationLink}>
-          <a><button className='explore'>APPLY HERE</button></a>
+          <button className='explore'>APPLY HERE</button>
       </Link>
-    </>)
+    </>;
   }
 }
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let blogsID = await getResearchProgramByID()

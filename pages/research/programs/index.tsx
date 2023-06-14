@@ -34,12 +34,12 @@ function researchProgramsRows(researchPrograms: ResearchProgramItem[]) {
   return researchPrograms.map((researchProgram) =>
     <div key={researchProgram.id}> 
       <Link href={`/research/programs/${encodeURIComponent(researchProgram.id)}`}>
-        <a>
-          <h2 className="title underline text-center">{researchProgram.title}</h2>
-          <h3 className="text-center">{researchProgram.subtitle}</h3>
-        </a>
+
+        <h2 className="title underline text-center">{researchProgram.title}</h2>
+        <h3 className="text-center">{researchProgram.subtitle}</h3>
+
       </Link>
       <br/><br/><br/><br/><br/>
     </div>
-  )
+  );
 }

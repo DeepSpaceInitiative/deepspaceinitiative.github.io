@@ -5,24 +5,22 @@ import { documentToPlainTextString } from '@contentful/rich-text-plain-text-rend
 import { Block } from '@contentful/rich-text-types'
 
 export default function Home(props: { members: TeamMember[] }) {
-  return (
-    <>
-    <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
-      <div>
-        <h2 className="p-6">OUR ADVISORS</h2>
-        <p className="p-6">
-        If you have expertise in Astronaut Health & Performance, Space Architecture, or Space Transportation Systems, with at least 5 years of experience, and are interested in mentoring a research team, please don't hesitate to reach out. Email us your resume and a short description of your ongoing or previous research to 
-        <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
-          <a><p> admin@deepspaceinitiative.org</p></a>
-        </Link>
-        </p>
-        {/* <div className="grid flex-grid lg:grid-cols-3">
-          { memberRows(props.members) }
-        </div> */}
-      </div>
-    </section>
-    </>
-  )
+  return <>
+  <section id="about_us" className="flex flex-col h-full text-white text-center space-y-3 p-10">
+    <div>
+      <h2 className="p-6">OUR ADVISORS</h2>
+      <p className="p-6">
+      If you have expertise in Astronaut Health & Performance, Space Architecture, or Space Transportation Systems, with at least 5 years of experience, and are interested in mentoring a research team, please don't hesitate to reach out. Email us your resume and a short description of your ongoing or previous research to 
+      <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
+        <p> admin@deepspaceinitiative.org</p>
+      </Link>
+      </p>
+      {/* <div className="grid flex-grid lg:grid-cols-3">
+        { memberRows(props.members) }
+      </div> */}
+    </div>
+  </section>
+  </>;
 }
 
 // export const getStaticProps: GetStaticProps = async (context) => {

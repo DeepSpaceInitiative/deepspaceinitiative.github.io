@@ -19,13 +19,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   })
 
   return (
-    <>
+    <div>
       <Head>
         <title>Deep Space Initiative</title>
       </Head>
       <NextUIProvider theme={theme}>
         <Layout children={child}/>
       </NextUIProvider >
-    </>
+    </div>
   )
 }
