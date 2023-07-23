@@ -20,8 +20,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div>
-      <Head>
+      <Head key={1}>
         <title>Deep Space Initiative</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"/>
       </Head>
       <NextUIProvider theme={theme}>
         <Layout children={child}/>

@@ -1,4 +1,5 @@
 import { Dropdown, Navbar } from "@nextui-org/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -27,16 +28,15 @@ export default function NavBar() {
 	}
 
   const makeNavigationItem = (props: {title: string, link: string}) => {
-    return (
-      <Link href={props.link} legacyBehavior>
-       <Navbar.Link 
-        isActive={router.pathname == props.link} 
-        href={props.link}
-        onClick={() => HandleSideMenu(false, props.link)}>
-          <span>{props.title}</span>
-        </Navbar.Link>
-      </Link>
-    );
+    const isActive = router.pathname == props.link
+    return <Link href={props.link} legacyBehavior>
+      <Navbar.Link 
+      isActive={isActive}
+      href={props.link}
+      onClick={() => HandleSideMenu(false, props.link)}>
+        <span style={{fontWeight: 'bold'}}>{props.title}</span>
+      </Navbar.Link>
+    </Link>
   }
 
   const collapsableItems  = () => {
@@ -50,28 +50,30 @@ export default function NavBar() {
       {title: "NEWS", link: "/blogs"},
       {title: "CAREERS", link: "/careers"}
     ]
-    return navItems.map((item, index) => (
-      <Navbar.CollapseItem 
+    return navItems.map((item, index) => {
+      const isActive = router.pathname == item.link
+      return <Navbar.CollapseItem 
         key={item.link} 
-        isActive={router.pathname == item.link}
+        isActive={isActive}
         onClick={() => HandleSideMenu(true, item.link)}
       >
-        <Link color="inherit" href={item.link} legacyBehavior>
+        <Link href={item.link} legacyBehavior style={{fontWeight: 'bold'}}>
           {item.title}
         </Link>
       </Navbar.CollapseItem>
-    ));
+    });
   }
 
   const makeDropDownItem = (props: {title: string, link: string, description: string}) => {
+    const isActive = router.pathname == props.link
     return (
       <Dropdown.Item key={props.link} description={props.description} showFullDescription>
-          <Link href={props.link} legacyBehavior>
+          <Link href={props.link} legacyBehavior style={{fontWeight: 'bold'}}>
             <Navbar.Link 
-              isActive={router.pathname == props.link} 
+              isActive={isActive} 
               href={props.link}
             >
-              <span>{props.title}</span>
+              <span style={{fontWeight: 'bold'}}>{props.title}</span>
             </Navbar.Link>
           </Link>
         </Dropdown.Item>
@@ -81,7 +83,8 @@ export default function NavBar() {
   const makeDropDown = (props: {
     section: {title: string}, 
     dropdownItems: {title: string, link: string, description: string}[]
-  }) => (<Dropdown isBordered type="listbox">
+  }) => {
+    return <Dropdown isBordered type="listbox">
       <Navbar.Item>
         <Dropdown.Button
           ripple={false}
@@ -91,10 +94,10 @@ export default function NavBar() {
             svg: { pe: "none" },
           }}
         >
-          {props.section.title}
+          <span style={{fontWeight: 'bold'}}>{props.section.title}</span>
         </Dropdown.Button>
       </Navbar.Item>
-      <Dropdown.Menu
+      <Dropdown.Menu 
         aria-label="Single selection actions"
         selectionMode="single"
         selectedKeys={selectedDropdown}
@@ -112,25 +115,21 @@ export default function NavBar() {
             // dropdown item title
             "& .nextui-dropdown-item-content": {
               w: "100%",
-              fontWeight: "$semibold",
             },
           },
         }}
       >
         {props.dropdownItems.map(dropdownItem => makeDropDownItem(dropdownItem))}
       </Dropdown.Menu>
-    </Dropdown>)
+    </Dropdown>
+  }
 
   return (
-    <Navbar
-      isCompact
-      disableBlur
-      variant="sticky"
-    >
-      <Navbar.Content>
-        <Navbar.Link href="/">
+    <Navbar variant="static">
+      <Navbar.Content >
+        <Navbar.Link>
           <Link href="/" legacyBehavior>
-            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">DEEP SPACE INITIATIVE</span>
+            <Image alt="DEEP SPACE INITIATIVE logo" src="/images/nav_logo.svg" width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }}/>
           </Link>
         </Navbar.Link>
       </Navbar.Content>
@@ -166,7 +165,7 @@ export default function NavBar() {
         <Navbar.Toggle 
           aria-label="toggle navigation" 
           isSelected={isSideMenuOpen}
-                  onChange={() => HandleSideMenu(true, activeMenu)}/>
+          onChange={() => HandleSideMenu(true, activeMenu)}/>
       </Navbar.Brand>
     </Navbar>
   );
