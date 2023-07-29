@@ -1,45 +1,50 @@
+import Image from "next/legacy/image";
+import Link from "next/link";
+import logoImage from 'public/images/nav_logo.svg'
+
 export default function Footer() {
   return (
     <>
 {/* Footer */}
-<footer id="footer">
-{/* Icons */}
-<ul className="icons">
-  {/*						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>*/}
-  {/*						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>*/}
-  <li>
-    <a
-      href="https://www.instagram.com/deepspaceinitiative/"
-      className="icon brands fa-instagram"
-    >
-      <span className="label">Instagram</span>
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.linkedin.com/company/deep-space-initiative/"
-      className="icon brands fa-linkedin-in"
-    >
-      <span className="label">LinkedIn</span>
-    </a>
-  </li>
-  <li>
-    <a
-      href="https://www.youtube.com/channel/UCJkzi5VWejU7DQ5V3zo24AQ"
-      className="icon brands fa-youtube"
-    >
-      <span className="label">YouTube</span>
-    </a>
-  </li>
-  {/*						<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>*/}
-</ul>
-{/* Menu */}
-<ul className="menu">
-  <li>© DEEP SPACE INITIATIVE</li>
-  <li>
-    <a href="https://html5up.net">Design</a>
-  </li>
-</ul>
+<footer>
+  <div className="flex-col text-white p-12"> 
+    <div className="flex"> 
+      <div className="w-1/2 h-full">
+        <div className="w-40 h-full">
+          <Link href="/" legacyBehavior>
+            <Image 
+              alt="DEEP SPACE INITIATIVE logo" 
+              src={logoImage}
+              layout='responsive'
+              objectFit='contain'
+              priority={true}
+            />
+          </Link>
+        </div>
+      </div>
+      {/* Icons */}
+      <div className="flex items-center justify-end w-1/2">
+        <a
+          href="https://www.instagram.com/deepspaceinitiative/"
+          className="pr-20 icon brands fa-instagram"
+        >
+          <span className="label">Instagram</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/deep-space-initiative/"
+          className="pr-20 icon brands fa-linkedin-in"
+        >
+          <span className="label">LinkedIn</span>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCJkzi5VWejU7DQ5V3zo24AQ"
+          className="icon brands fa-youtube"
+        >
+          <span className="label">YouTube</span>
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
 </>
   );

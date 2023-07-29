@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         <div className="w-full h-full pt-20">
           <Link href="/research">
-            <button className='border-white border bg-black font-bold'>Learn More ></button>
+            <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>
         </div>
       </div>
@@ -77,8 +77,8 @@ export default function Home() {
           <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
         </div>
         <div className="w-full h-full pt-20">
-          <Link href="/research">
-            <button className='border-white border bg-black font-bold'>Learn More ></button>
+          <Link href="/education/webinars/7tI3shjYB7vL6xIlWQWfUo">
+            <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <div className="w-full h-full pt-20">
           <Link href="/research">
-            <button className='border-white border bg-black font-bold'>Learn More ></button>
+            <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>
         </div>
       </div>
