@@ -1,9 +1,10 @@
 import Image from "next/legacy/image"
 import Link from 'next/link'
 import mainImage from 'public/images/home_images/main.jpg'
-import AHP1Image from 'public/images/home_images/AHP1.jpg'
-import home21Image from 'public/images/home_images/home21.jpg'
-import STSImage from 'public/images/home_images/STS.jpg'
+import backgroundImage from 'public/images/home_images/home_background.png'
+import researchImage from 'public/images/home_images/research.png'
+import educationImage from 'public/images/home_images/education.jpg'
+import legalImage from 'public/images/home_images/legal.jpg'
 
 export default function Home() {
   return <>
@@ -13,83 +14,108 @@ export default function Home() {
       src={mainImage}
       layout='fill'
       objectFit='cover'
+      priority={true}
+      alt="Background Image"
   />
-  <div className="content">  
-    <br /> <br /> <br />
-    <h2>DEEP SPACE INITIATIVE</h2>
-    <p>
-      Increasing accessibility and opportunity for space research all over the
-      world
-    </p>
-    <Link href="/teams/core">
-      <button>LEARN MORE</button>
-    </Link>
-  </div>
 </section>
-{/* One */}
-<section id="one" className="main right style2 dark fullscreen">
-  <Image
-      src={AHP1Image}
-      layout='fill'
-      objectFit='cover'
-  />    
-  <div className="content box style2">
-    <header>
-      <h2>ASTRONAUT HEALTH &amp; PERFORMANCE</h2>
-    </header>
-    <Link href="/research">
-      <button className='explore'>EXPLORE</button>
-    </Link>
-  </div>
-</section>
-{/* Two */}
-<section id="two" className="main style2 left dark fullscreen">
-  <Image
-      src={home21Image}
-      layout='fill'
-      objectFit='cover'
-  />
-  <div className="content box style2">
-    <header>
-      <h2>
-        SPACE <br /> ARCHITECTURE
-      </h2>
-    </header>
-    <Link href="/research">
+<div className="relative w-full h-full flex-col justify-between text-white">
+  <div className="flex flex-col w-full overflow-y-scroll z-20 bg-transparent">
+    <div className="absolute w-full h-full z-10">
+      <Image
+        src={backgroundImage}
+        layout='responsive'
+        objectFit='contain'
+        priority={true}
+        alt="Background Image"
+      />
+    </div>
+    <div className="w-full h-full flex-col items-start justify-center pr-12 pl-12 pt-2">
+      <div className="h-1/2 w-1/2">
+        <h2 className="font-bold text-left">Our Vision</h2>
+        <p className="text-left">
+        Our goal is to enable deep space exploration while bringing more opportunity and accessibility for everyone around the world.
+        </p>
+      </div>
+      <div className="h-80"/>
+      <div className="h-64"/>
+      <div className="h-full pb-32">
+        <h2 className="font-bold text-center">Departments</h2>
+        <p className="text-left">
+        When setting up DSI we’ve explored the most pressing challenges to break into Space. Which is why narrowed down the first horizon of DSI around Research, Education and Legal. This is just our first step, tomorrow space will be truly unlimited.
+        </p>
+      </div>
+    </div>
 
-      <button className='explore'>EXPLORE</button>
+    {/* One */}
+    <div className="w-full h-full flex z-20">
+      <div className="w-1/2">
+        <Image
+            src={researchImage}
+            layout='responsive'
+            objectFit='contain'
+            priority={true}
+        />
+        </div>
+      <div className="w-1/2 h-full items-start p-8 flex-col">
+        <div className="w-full h-1/2 flex-col items-center">
+          <h2 className="text-left font-bold">Research</h2>
+          <p className="text-left font-medium">Men</p>
+        </div>
+        <div className="w-full h-full pt-20">
+          <Link href="/research">
+            <button className='border-white border bg-black font-bold'>Learn More ></button>
+          </Link>
+        </div>
+      </div>
+    </div>
 
-    </Link>
-  </div>
-</section>
-{/* Three */}
-<section id="three" className="main style2 right dark fullscreen">
-  <Image
-      src={STSImage}
-      layout='fill'
-      objectFit='cover'
-  />
-  <div className="content box style2">
-    <header>
-      <h2>SPACE TRANSPORTATION SYSTEMS</h2>
-    </header>
-    <Link href="/research">
+    {/* Two */}
+    <div className="w-full h-full flex z-20">
+      <div className="w-1/2 h-full items-start p-8 flex-col">
+        <div className="w-full h-1/2 flex-col items-center">
+          <h2 className="text-left font-bold">Education</h2>
+          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+        </div>
+        <div className="w-full h-full pt-20">
+          <Link href="/research">
+            <button className='border-white border bg-black font-bold'>Learn More ></button>
+          </Link>
+        </div>
+      </div>
+      <div className="w-1/2 h-full aspect-auto">
+        <Image
+            src={educationImage}
+            layout='responsive'
+            objectFit='contain'
+            priority={true}
+        />
+      </div>
+      
+    </div>
 
-      <button className='explore'>EXPLORE</button>
-
-    </Link>
+    {/* Three */}
+    <div className="w-full h-full flex z-20">
+      <div className="w-1/2 h-full aspect-auto">
+        <Image
+            src={legalImage}
+            layout='responsive'
+            objectFit='contain'
+            priority={true}
+        />
+      </div>
+      <div className="w-1/2 h-full items-start p-8 flex-col">
+        <div className="w-full h-1/2 flex-col items-center">
+          <h2 className="text-left font-bold">Legal</h2>
+          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+        </div>
+        <div className="w-full h-full pt-20">
+          <Link href="/research">
+            <button className='border-white border bg-black font-bold'>Learn More ></button>
+          </Link>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
-<section id="careers" className="main style1 dark fullscreen">
-  <div className="content">
-    <header>
-      <h2>CONTACT US</h2>
-      <br />
-    </header>
-    <Link href="mailto:admin@deepspaceinitiative.org" passHref={true}>
-      <p>admin@deepspaceinitiative.org</p>
-    </Link>
-  </div>
-</section>
+</div>
 </>;
 }
