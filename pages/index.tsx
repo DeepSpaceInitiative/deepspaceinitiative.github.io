@@ -30,25 +30,25 @@ export default function Home() {
       />
     </div>
     <div className="w-full h-full flex-col items-start justify-center pr-12 pl-12 pt-2">
-      <div className="h-1/2 w-1/2">
-        <h2 className="font-bold text-left">Our Vision</h2>
-        <p className="text-left">
+      <div className="h-1/2 sm:w-1/2 w-full">
+        <h2 className="font-bold sm:text-left text-center">Our Vision</h2>
+        <p className="sm:text-left text-center">
         Our goal is to enable deep space exploration while bringing more opportunity and accessibility for everyone around the world.
         </p>
       </div>
-      <div className="h-80"/>
-      <div className="h-64"/>
+      <div className="sm:h-80 h-20"/>
+      <div className="sm:h-64"/>
       <div className="h-full pb-32">
         <h2 className="font-bold text-center">Departments</h2>
-        <p className="text-left">
+        <p className="sm:text-left text-center">
         When setting up DSI we’ve explored the most pressing challenges to break into Space. Which is why narrowed down the first horizon of DSI around Research, Education and Legal. This is just our first step, tomorrow space will be truly unlimited.
         </p>
       </div>
     </div>
 
     {/* One */}
-    <div className="w-full h-full flex z-20">
-      <div className="w-1/2">
+    <div className="w-full h-full sm:flex z-20">
+      <div className="sm:w-1/2 w-full">
         <Image
             src={researchImage}
             layout='responsive'
@@ -56,12 +56,12 @@ export default function Home() {
             priority={true}
         />
         </div>
-      <div className="w-1/2 h-full items-start p-8 flex-col">
+      <div className="sm:w-1/2 w-full h-full sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Research</h2>
           <p className="text-left font-medium">Men</p>
         </div>
-        <div className="w-full h-full pt-20">
+        <div className="w-full h-full sm:pt-20">
           <Link href="/research">
             <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>
@@ -70,19 +70,19 @@ export default function Home() {
     </div>
 
     {/* Two */}
-    <div className="w-full h-full flex z-20">
-      <div className="w-1/2 h-full items-start p-8 flex-col">
+    <div className="w-full h-full sm:flex z-20">
+      <div className="sm:w-1/2 w-full sm:h-full hidden md:block sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Education</h2>
           <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
         </div>
-        <div className="w-full h-full pt-20">
+        <div className="w-full h-full sm:pt-20">
           <Link href="/education/webinars/7tI3shjYB7vL6xIlWQWfUo">
             <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>
         </div>
       </div>
-      <div className="w-1/2 h-full aspect-auto">
+      <div className="sm:w-1/2 w-full">
         <Image
             src={educationImage}
             layout='responsive'
@@ -90,12 +90,22 @@ export default function Home() {
             priority={true}
         />
       </div>
-      
+      <div className="sm:w-1/2 w-full sm:h-full md:hidden sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
+        <div className="w-full h-1/2 flex-col items-center">
+          <h2 className="text-left font-bold">Education</h2>
+          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+        </div>
+        <div className="w-full h-full sm:pt-20">
+          <Link href="/education/webinars/7tI3shjYB7vL6xIlWQWfUo">
+            <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
+          </Link>
+        </div>
+      </div>
     </div>
 
     {/* Three */}
-    <div className="w-full h-full flex z-20">
-      <div className="w-1/2 h-full aspect-auto">
+    <div className="w-full h-full sm:flex z-20">
+      <div className="sm:w-1/2 w-full">
         <Image
             src={legalImage}
             layout='responsive'
@@ -103,12 +113,12 @@ export default function Home() {
             priority={true}
         />
       </div>
-      <div className="w-1/2 h-full items-start p-8 flex-col">
+      <div className="sm:w-1/2 w-full h-full sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Legal</h2>
           <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
         </div>
-        <div className="w-full h-full pt-20">
+        <div className="w-full h-full sm:pt-20">
           <Link href="/research">
             <button className='border-white border bg-black font-bold'>Learn More {">"}</button>
           </Link>

@@ -7,10 +7,10 @@ export default function Footer() {
     <>
 {/* Footer */}
 <footer>
-  <div className="flex-col text-white p-12"> 
-    <div className="flex"> 
-      <div className="w-1/2 h-full">
-        <div className="w-40 h-full">
+  <div className="md:flex-col flex text-white md:p-12 p-2 justify-center"> 
+    <div className="md:flex flex-col items-center"> 
+      <div className="md:w-1/2 w-full h-full">
+        <div className="md:w-40 w-full h-full">
           <Link href="/" legacyBehavior>
             <Image 
               alt="DEEP SPACE INITIATIVE logo" 
@@ -23,7 +23,7 @@ export default function Footer() {
         </div>
       </div>
       {/* Icons */}
-      <div className="flex items-center justify-end w-1/2">
+      <div className="flex md:items-center md:justify-end justify-center md:w-1/2 w-full pb-4">
         <a
           href="https://www.instagram.com/deepspaceinitiative/"
           className="pr-20 icon brands fa-instagram"
