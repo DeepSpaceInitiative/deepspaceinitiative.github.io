@@ -1,8 +1,9 @@
 import { Dropdown, Navbar } from "@nextui-org/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import navLogo from 'public/images/nav_logo.png';
 
 export default function NavBar() {
   const router = useRouter();
@@ -124,12 +125,20 @@ export default function NavBar() {
     </Dropdown>
   }
 
-  return (
-    <Navbar variant="static">
+  return <Navbar variant="static">
       <Navbar.Content >
         <Navbar.Link>
           <Link href="/" legacyBehavior>
-            <Image alt="DEEP SPACE INITIATIVE logo" src="/images/nav_logo.svg" width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }}/>
+            <div className="w-24 h-24 pt-6">
+              <Image
+                className="w-1 h-auto"
+                alt="DEEP SPACE INITIATIVE logo" 
+                src={navLogo}
+                layout="responsive" 
+                objectFit="contain"
+                priority={true}
+              />
+            </div>
           </Link>
         </Navbar.Link>
       </Navbar.Content>
@@ -168,5 +177,4 @@ export default function NavBar() {
           onChange={() => HandleSideMenu(true, activeMenu)}/>
       </Navbar.Brand>
     </Navbar>
-  );
 }

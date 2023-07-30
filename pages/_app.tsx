@@ -17,9 +17,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       fonts: {}
     }
   })
-
+  var relativeNavBar = false
+  if (pageProps.relativeNavBar !== undefined) {
+    relativeNavBar = pageProps.relativeNavBar
+  }
   return (
-    <div>
+    <div key={1}>
       <Head key={1}>
         <title>Deep Space Initiative</title>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -27,7 +30,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"/>
       </Head>
       <NextUIProvider theme={theme}>
-        <Layout children={child}/>
+        <Layout relativeNavBar={relativeNavBar} children={child}/>
       </NextUIProvider >
     </div>
   )

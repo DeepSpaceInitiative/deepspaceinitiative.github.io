@@ -16,6 +16,7 @@
     "@types/react-dom": "^18.2.5",
     "autoprefixer": "^10.4.11",
     "contentful": "^9.2.4",
+    "framer-motion": "^10.15.0",
     "next": "latest",
     "postcss": "^8.4.16",
     "react": "^18",
