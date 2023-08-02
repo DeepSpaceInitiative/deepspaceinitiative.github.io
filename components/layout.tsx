@@ -14,7 +14,7 @@ const Layout = ({ children, relativeNavBar }: Props) => {
         <div className="fixed left-0 z-50 w-full bg-transparent">
           <Navbar />
         </div>
-        <div>{children}</div>
+        <div className="overflow-clip">{children}</div>
         <Footer />
       </div>
     </>

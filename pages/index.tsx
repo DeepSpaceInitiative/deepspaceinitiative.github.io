@@ -26,7 +26,7 @@ export default function Home() {
     />
   </motion.div>
 </div>
-<div className="relative w-full h-full flex-col justify-between text-white">
+<div className="relative w-full h-full flex-col justify-between text-white pb-16">
   <div className="flex flex-col w-full overflow-y-scroll z-20 bg-transparent">
     <div className="absolute w-full h-full z-10">
       <Image
