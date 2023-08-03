@@ -14,10 +14,10 @@ export default function About() {
 				Pushing the frontiers of science through collaborative multi and interdisciplinary research.  <br> <br> */}
         {/* <strong>ABOUT US</strong> <br> */}
         The goal of Deep Space Initiative (DSI) is to increase accessibility and
-        opportunity for space research by providing a virtual platform that
+        opportunity for Space research by providing a virtual platform that
         allows for efficient, collaborative, and interdisciplinary research by
         teams, under expert guidance. The main focus of DSI is to expose members
-        to real spaceflight challenges and promote/teach skills in critical
+        to real Spaceflight challenges and promote/teach skills in critical
         thinking, problem definition, and solution development in a
         multi-disciplinary collaborative environment. <br /> <br />
         Currently, three main fields of study are considered: Astronaut Health

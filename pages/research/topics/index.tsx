@@ -20,7 +20,7 @@ export default function ResearchTopics(props: { topics: ResearchTopicItem[] }) {
         <div className="content">
           <header>
             <h2 className="text-center">RESEARCH TOPICS</h2>
-            <h3 className="text-center">Enabling deep space exploration for the benefit of all Humankind</h3>
+            <h3 className="text-center">Enabling deep Space exploration for the benefit of all Humankind</h3>
             <br />
           </header>
         </div>

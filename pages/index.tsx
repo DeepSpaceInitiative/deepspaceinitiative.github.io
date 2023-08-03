@@ -40,7 +40,7 @@ export default function Home() {
       <div className="h-1/2 sm:w-1/2 w-full">
         <h2 className="font-bold sm:text-left text-center">Our Vision</h2>
         <p className="sm:text-left text-center">
-        Our goal is to enable deep space exploration while bringing more opportunity and accessibility for everyone around the world.
+        Our goal is to enable deep Space exploration while bringing more opportunity and accessibility for everyone around the world.
         </p>
       </div>
       <div className="sm:h-80 h-20"/>
@@ -48,7 +48,7 @@ export default function Home() {
       <div className="h-full pb-32">
         <h2 className="font-bold text-center">Departments</h2>
         <p className="sm:text-left text-center">
-        When setting up DSI we’ve explored the most pressing challenges to break into Space. Which is why narrowed down the first horizon of DSI around Research, Education and Legal. This is just our first step, tomorrow space will be truly unlimited.
+        When setting up DSI we’ve explored the most pressing challenges to break into Space. Which is why narrowed down the first horizon of DSI around Research, Education and Legal. This is just our first step, tomorrow Space will be truly unlimited.
         </p>
       </div>
     </div>
@@ -80,7 +80,7 @@ export default function Home() {
       <div className="sm:w-1/2 w-full sm:h-full hidden md:block sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Education</h2>
-          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+          <p className="text-left font-medium">Enabling deep Space exploration for the benefit of all Humankind</p>
         </div>
         <div className="w-full h-full sm:pt-20">
           <Link href="/education/webinars/7tI3shjYB7vL6xIlWQWfUo">
@@ -99,7 +99,7 @@ export default function Home() {
       <div className="sm:w-1/2 w-full sm:h-full md:hidden sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Education</h2>
-          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+          <p className="text-left font-medium">Enabling deep Space exploration for the benefit of all Humankind</p>
         </div>
         <div className="w-full h-full sm:pt-20">
           <Link href="/education/webinars/7tI3shjYB7vL6xIlWQWfUo">
@@ -122,7 +122,7 @@ export default function Home() {
       <div className="sm:w-1/2 w-full h-full sm:items-start items-center sm:p-8 p-2 sm:flex-col flex">
         <div className="w-full h-1/2 flex-col items-center">
           <h2 className="text-left font-bold">Legal</h2>
-          <p className="text-left font-medium">Enabling deep space exploration for the benefit of all Humankind</p>
+          <p className="text-left font-medium">Enabling deep Space exploration for the benefit of all Humankind</p>
         </div>
         <div className="w-full h-full sm:pt-20">
           <Link href="/research">
